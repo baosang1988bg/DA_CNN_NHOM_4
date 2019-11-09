@@ -45,6 +45,7 @@
             this.btn_TaoPN = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_LPN = new System.Windows.Forms.Button();
+            this.txt_Ngay = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -81,7 +82,6 @@
             this.qL_ThuocDataSet = new MedicineManager.QL_ThuocDataSet();
             this.chiTietHoaDonXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietHoaDonXuatTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.ChiTietHoaDonXuatTableAdapter();
-            this.txt_Ngay = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -247,6 +247,7 @@
             this.cbo_TenNPP.Name = "cbo_TenNPP";
             this.cbo_TenNPP.Size = new System.Drawing.Size(241, 30);
             this.cbo_TenNPP.TabIndex = 11;
+            this.cbo_TenNPP.SelectedIndexChanged += new System.EventHandler(this.cbo_TenNPP_SelectedIndexChanged);
             // 
             // cbo_TenNV
             // 
@@ -313,6 +314,15 @@
             this.btn_LPN.Text = "Lưu phiếu nhập";
             this.btn_LPN.UseVisualStyleBackColor = true;
             this.btn_LPN.Click += new System.EventHandler(this.btn_LPN_Click);
+            // 
+            // txt_Ngay
+            // 
+            this.txt_Ngay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Ngay.Location = new System.Drawing.Point(928, 43);
+            this.txt_Ngay.Name = "txt_Ngay";
+            this.txt_Ngay.Size = new System.Drawing.Size(241, 28);
+            this.txt_Ngay.TabIndex = 17;
             // 
             // groupBox2
             // 
@@ -711,6 +721,7 @@
             this.btn_Luu.TabIndex = 13;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // tableLayoutPanel12
             // 
@@ -753,15 +764,6 @@
             // chiTietHoaDonXuatTableAdapter
             // 
             this.chiTietHoaDonXuatTableAdapter.ClearBeforeFill = true;
-            // 
-            // txt_Ngay
-            // 
-            this.txt_Ngay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Ngay.Location = new System.Drawing.Point(928, 43);
-            this.txt_Ngay.Name = "txt_Ngay";
-            this.txt_Ngay.Size = new System.Drawing.Size(241, 28);
-            this.txt_Ngay.TabIndex = 17;
             // 
             // frmNhapThuoc
             // 

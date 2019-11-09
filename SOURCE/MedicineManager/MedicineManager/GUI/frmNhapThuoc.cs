@@ -158,9 +158,25 @@ namespace MedicineManager.GUI
             try
             {
                 string maHDN = txt_MaHDN.Text.Trim();
-                string npp = cbo_TenNPP.Text;
+
+                string tenNV = "select MaNV from NhanVien where TenNV LIKE N'%" + cbo_TenNV.Text.Trim() + "%'";
+                SqlDataReader drTenNV = conn.excuteReader(tenNV);
+                string maNV = drTenNV["MaNV"].ToString();;
+                drTenNV.Read();
+                maNV = drTenNV["MaNV"].ToString();
+                drTenNV.Close();
+                conn.ClosedConnection();
+
                 string ngaypp = txt_Ngay.Text;
-                string maNPP = cbo_TenNPP.Text;
+
+                string tenNPP = "select MaNPP from NhaPhanPhoi where TenNPP LIKE N'%" + cbo_TenNPP.Text.Trim() + "%'";
+                SqlDataReader drTenNPP = conn.excuteReader(tenNPP);
+                string maNPP = drTenNPP["MaNPP"].ToString(); ;
+                drTenNPP.Read();
+                maNPP = drTenNPP["MaNPP"].ToString();
+                drTenNPP.Close();
+                conn.ClosedConnection();
+
                 string strSQL = "select COUNT(*) from HoaDonNhap where MaHDN = '"+ maHDN +"'";
                 int Check_MHD = conn.getCount(strSQL);
                 if (Check_MHD > 0)
@@ -168,18 +184,38 @@ namespace MedicineManager.GUI
                     MessageBox.Show("Mã "+ maHDN +" đã tồn tại");
                     return;
                 }
-                string strIns = "INSERT [dbo].[HoaDonNhap] ([MaHDN], [MaNPP], [MaNV], [TienNhan], [NgayLap])"
-                                        + "VALUES (N'" + maHDN + "', '" + npp + "', '" + npp + "', '" + npp + "', '" + ncc + "')";
+                string strIns = "insert into HoaDonNhap (MaHDN,MaNPP,MaNV,NgayLap) values ('"+ maHDN +"','"+ maNPP +"','"+ maNV +"','"+ ngaypp +"');";
                 conn.updateToDB(strIns);
                 MessageBox.Show("Mã "+ maHDN +" được tạo thành công!");
                 load_HDN();
                 return;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Loi roi ne");
+                MessageBox.Show("Loi roi ne" + ex);
                 return;
             }
+        }
+
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+            string tenNV = "select MaNV from NhanVien where TenNV LIKE N'%" + cbo_TenNV.Text.Trim() + "%'";
+            SqlDataReader drTenNV = conn.excuteReader(tenNV);
+            drTenNV.Read();
+            string maNV = drTenNV["MaNV"].ToString();
+            //while (drTenNV.Read())
+            //{
+            //    maNV = drTenNV["MaNV"].ToString();
+
+            //}
+            drTenNV.Close();
+            conn.ClosedConnection();
+            MessageBox.Show(maNV);
+        }
+
+        private void cbo_TenNPP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
