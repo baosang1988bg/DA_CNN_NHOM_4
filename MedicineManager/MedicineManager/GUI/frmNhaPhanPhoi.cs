@@ -34,5 +34,13 @@ namespace MedicineManager.GUI
             load_NPP();
             dgv_ds_npp.DataSource = conn.Ds.Tables["NhaPhanPhoi"];
         }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

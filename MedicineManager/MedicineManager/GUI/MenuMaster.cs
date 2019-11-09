@@ -45,13 +45,13 @@ namespace MedicineManager.GUI
 
         private void ts_Thuoc_Click(object sender, EventArgs e)
         {
-            ActiveForm_Master();
-            Medicine frmNH = new Medicine();
-            frmNH.MdiParent = this;
+            //ActiveForm_Master();
+            //Medicine frmNH = new Medicine();
+            //frmNH.MdiParent = this;
 
-            frmNH.Show();
-            frmNH.Top = 0;
-            frmNH.Left = 0;
+            //frmNH.Show();
+            //frmNH.Top = 0;
+            //frmNH.Left = 0;
             
         }
 
