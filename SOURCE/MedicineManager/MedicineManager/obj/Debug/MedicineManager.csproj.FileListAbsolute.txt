@@ -49,3 +49,6 @@ D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManage
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.Test.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.Properties.Resources.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.csproj.GenerateResource.Cache
+D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\bin\Debug\MedicineManager.exe.config
+D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.exe
+D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.pdb
