@@ -101,8 +101,9 @@ namespace MedicineManager.GUI
             cbo_MaThuoc.Text = "";
             cbo_TenNPP.Text = "";
             cbo_TenNV.Text = "";
-            DateTime now = new DateTime();
-            mtxt_Ngay.Text = now.ToString("d");
+            DateTime now = DateTime.Now;
+            txt_Ngay.Text = now.ToString("dd/MM/yyyy");
+            txt_Ngay.Enabled = false;
         }
 
 
@@ -144,15 +145,39 @@ namespace MedicineManager.GUI
             cbo_TenNPP.Text = "";
             cbo_TenNV.Text = "";
             txt_ThanhTien.Text = "0";
-            mtxt_Ngay.Clear();
         }
 
         private void btn_LPN_Click(object sender, EventArgs e)
         {
-            if (txt_MaHDN.Text == "" || cbo_TenNPP.Text == "" || cbo_TenNV.Text == "" || mtxt_Ngay.Text == "")
+            if (txt_MaHDN.Text == "" || cbo_TenNPP.Text == "" || cbo_TenNV.Text == "" || txt_Ngay.Text == "")
             {
                 MessageBox.Show("Chưa nhập đủ thông tin");
                 txt_MaHDN.Focus();
+                return;
+            }
+            try
+            {
+                string maHDN = txt_MaHDN.Text.Trim();
+                string npp = cbo_TenNPP.Text;
+                string ngaypp = txt_Ngay.Text;
+                string maNPP = cbo_TenNPP.Text;
+                string strSQL = "select COUNT(*) from HoaDonNhap where MaHDN = '"+ maHDN +"'";
+                int Check_MHD = conn.getCount(strSQL);
+                if (Check_MHD > 0)
+                {
+                    MessageBox.Show("Mã "+ maHDN +" đã tồn tại");
+                    return;
+                }
+                string strIns = "INSERT [dbo].[HoaDonNhap] ([MaHDN], [MaNPP], [MaNV], [TienNhan], [NgayLap])"
+                                        + "VALUES (N'" + maHDN + "', '" + npp + "', '" + npp + "', '" + npp + "', '" + ncc + "')";
+                conn.updateToDB(strIns);
+                MessageBox.Show("Mã "+ maHDN +" được tạo thành công!");
+                load_HDN();
+                return;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Loi roi ne");
                 return;
             }
         }

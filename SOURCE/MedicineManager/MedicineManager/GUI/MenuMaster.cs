@@ -87,7 +87,7 @@ namespace MedicineManager.GUI
         private void MenuMaster_Load(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            lbl_today.Text = now.ToString("d");
+            lbl_today.Text = now.ToString("dd/MM/yyyy");
             lbl_user.Text = frmLogin.ID_User;
         }
 
