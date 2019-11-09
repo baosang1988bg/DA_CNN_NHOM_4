@@ -33,6 +33,15 @@ namespace MedicineManager.GUI
             cbo_TenNPP.ValueMember = "MaNPP";
         }
 
+        public void Load_cbo_DVT()
+        {
+            string strsel = "select * from DonViTinh";
+            DataTable dt = conn.getDataTable(strsel, "DonViTinh");
+            cbo_DVT.DataSource = dt;
+            cbo_DVT.DisplayMember = "TenDVT";
+            cbo_DVT.ValueMember = "MaDVT";
+        }
+
         public void Load_cbo_MaHD()
         {
             string strsel = "select * from ChiTietHoaDonNhap";
@@ -51,6 +60,15 @@ namespace MedicineManager.GUI
             cbo_MaThuoc.ValueMember = "MaThuoc";
         }
 
+        public void Load_cbo_TenNV()
+        {
+            string strsel = "select * from NhanVien";
+            DataTable dt = conn.getDataTable(strsel, "NhanVien");
+            cbo_TenNV.DataSource = dt;
+            cbo_TenNV.DisplayMember = "TenNV";
+            cbo_TenNV.ValueMember = "MaNV";
+        }
+
         public void load_HDN()
         {
             string strsel = "select * from ChiTietHoaDonNhap";
@@ -66,12 +84,25 @@ namespace MedicineManager.GUI
 
         private void frmNhapThuoc_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qL_ThuocDataSet.ChiTietHoaDonXuat' table. You can move, or remove it, as needed.
+            this.chiTietHoaDonXuatTableAdapter.Fill(this.qL_ThuocDataSet.ChiTietHoaDonXuat);
             Load_cbo_TenNPP();
             Load_cbo_TenThuoc();
             Load_cbo_MaHD();
+            txt_DonGia.Text = "0";
             txt_DonGia.Enabled = false;
             load_HDN();
+            txt_ThanhTien.Text = "0";
             txt_ThanhTien.Enabled = false;
+            Load_cbo_DVT();
+            Load_cbo_TenNV();
+            cbo_DVT.Text = "";
+            cbo_Ma_HDN.Text = "";
+            cbo_MaThuoc.Text = "";
+            cbo_TenNPP.Text = "";
+            cbo_TenNV.Text = "";
+            DateTime now = new DateTime();
+            mtxt_Ngay.Text = now.ToString("d");
         }
 
 
@@ -82,10 +113,6 @@ namespace MedicineManager.GUI
             SqlDataReader dr = conn.excuteReader(strsel);
             while (dr.Read())
             {
-                //int sl = int.Parse(nUD_SL.Value.ToString());
-                //int giaBan = int.Parse(dr["GiaBan"].ToString());
-                //int tongTien = sl * giaBan;
-                //txt_DonGia.Text = tongTien.ToString();
                 txt_DonGia.Text = dr["GiaBan"].ToString();
             }
             dr.Close();
@@ -109,6 +136,25 @@ namespace MedicineManager.GUI
             //conn.ClosedConnection();
             
 
+        }
+
+        private void btn_TaoPN_Click(object sender, EventArgs e)
+        {
+            txt_MaHDN.Clear();
+            cbo_TenNPP.Text = "";
+            cbo_TenNV.Text = "";
+            txt_ThanhTien.Text = "0";
+            mtxt_Ngay.Clear();
+        }
+
+        private void btn_LPN_Click(object sender, EventArgs e)
+        {
+            if (txt_MaHDN.Text == "" || cbo_TenNPP.Text == "" || cbo_TenNV.Text == "" || mtxt_Ngay.Text == "")
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin");
+                txt_MaHDN.Focus();
+                return;
+            }
         }
     }
 }

@@ -34,7 +34,6 @@ D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManage
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\bin\Debug\MedicineManager.exe
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\bin\Debug\MedicineManager.pdb
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.csprojResolveAssemblyReference.cache
-D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.CreatePrescription.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmCachDung.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmDonViTinh.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmLogin.resources
@@ -44,7 +43,6 @@ D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManage
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmNhomThuoc.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.HoaDonNhap.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.Manager.resources
-D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.Medicine.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.MenuMaster.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.Test.resources
 D:\DA_CNN\DA_CNN_NHOM_4\MedicineManager\MedicineManager\obj\Debug\MedicineManager.Properties.Resources.resources

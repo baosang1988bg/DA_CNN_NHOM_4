@@ -39,19 +39,19 @@
             this.txt_MaNPP = new System.Windows.Forms.TextBox();
             this.txt_TenNPP = new System.Windows.Forms.TextBox();
             this.txt_DiaChi = new System.Windows.Forms.TextBox();
-            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_ds_npp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.btn_Luu = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_View = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -205,14 +205,6 @@
             this.txt_DiaChi.Size = new System.Drawing.Size(166, 22);
             this.txt_DiaChi.TabIndex = 6;
             // 
-            // txt_Email
-            // 
-            this.txt_Email.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Email.Location = new System.Drawing.Point(103, 336);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(166, 22);
-            this.txt_Email.TabIndex = 7;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -230,6 +222,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(166, 22);
             this.txt_SDT.TabIndex = 9;
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // groupBox2
             // 
@@ -255,11 +248,11 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.button2, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.button3, 0, 5);
-            this.tableLayoutPanel4.Controls.Add(this.button4, 0, 7);
-            this.tableLayoutPanel4.Controls.Add(this.button5, 0, 9);
+            this.tableLayoutPanel4.Controls.Add(this.btn_Them, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btn_Luu, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.btn_Sua, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.btn_Xoa, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.btn_View, 0, 9);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(1084, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -277,62 +270,62 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(116, 458);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // button1
+            // btn_Them
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Them.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Them.Location = new System.Drawing.Point(3, 48);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(110, 39);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_Luu
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(3, 138);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Luu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Luu.Location = new System.Drawing.Point(3, 138);
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.Size = new System.Drawing.Size(110, 39);
+            this.btn_Luu.TabIndex = 1;
+            this.btn_Luu.Text = "Lưu";
+            this.btn_Luu.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_Sua
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(3, 228);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 39);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Sua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Sua.Location = new System.Drawing.Point(3, 228);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(110, 39);
+            this.btn_Sua.TabIndex = 2;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_Xoa
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(3, 318);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 39);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Xoa.Location = new System.Drawing.Point(3, 318);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(110, 39);
+            this.btn_Xoa.TabIndex = 3;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_View
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(3, 408);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 47);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_View.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_View.Location = new System.Drawing.Point(3, 408);
+            this.btn_View.Name = "btn_View";
+            this.btn_View.Size = new System.Drawing.Size(110, 47);
+            this.btn_View.TabIndex = 4;
+            this.btn_View.Text = "Xem In";
+            this.btn_View.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.6936F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.3064F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 284F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -354,6 +347,14 @@
             this.label5.Size = new System.Drawing.Size(228, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhà phân phối";
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Email.Location = new System.Drawing.Point(103, 336);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(166, 22);
+            this.txt_Email.TabIndex = 7;
             // 
             // frmNhaPhanPhoi
             // 
@@ -392,17 +393,17 @@
         private System.Windows.Forms.TextBox txt_MaNPP;
         private System.Windows.Forms.TextBox txt_TenNPP;
         private System.Windows.Forms.TextBox txt_DiaChi;
-        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.DataGridView dgv_ds_npp;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Button btn_Luu;
+        private System.Windows.Forms.Button btn_Sua;
+        private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.Button btn_View;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_SDT;
+        private System.Windows.Forms.TextBox txt_Email;
     }
 }
