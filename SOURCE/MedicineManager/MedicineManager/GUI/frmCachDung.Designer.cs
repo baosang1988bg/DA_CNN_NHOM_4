@@ -99,7 +99,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.78839F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.2116F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -118,7 +118,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(133, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 49);
+            this.label1.Size = new System.Drawing.Size(248, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cách dùng";
             // 
@@ -128,7 +128,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.02247F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.97753F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.comboBox1, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.button1, 3, 1);
@@ -149,7 +149,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(98, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 56);
+            this.label2.Size = new System.Drawing.Size(196, 56);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tim kiem";
             // 
@@ -157,14 +157,14 @@
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(301, 28);
+            this.comboBox1.Location = new System.Drawing.Point(300, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(244, 24);
             this.comboBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(551, 28);
+            this.button1.Location = new System.Drawing.Point(550, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 49);
             this.button1.TabIndex = 2;

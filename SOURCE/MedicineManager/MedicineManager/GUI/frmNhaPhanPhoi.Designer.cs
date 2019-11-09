@@ -39,6 +39,7 @@
             this.txt_MaNPP = new System.Windows.Forms.TextBox();
             this.txt_TenNPP = new System.Windows.Forms.TextBox();
             this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -51,7 +52,6 @@
             this.btn_View = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_Email = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -205,6 +205,14 @@
             this.txt_DiaChi.Size = new System.Drawing.Size(166, 22);
             this.txt_DiaChi.TabIndex = 6;
             // 
+            // txt_Email
+            // 
+            this.txt_Email.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Email.Location = new System.Drawing.Point(103, 336);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(166, 22);
+            this.txt_Email.TabIndex = 7;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -325,7 +333,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.6936F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.3064F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 284F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -342,19 +350,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(487, 11);
+            this.label5.Location = new System.Drawing.Point(486, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(228, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhà phân phối";
-            // 
-            // txt_Email
-            // 
-            this.txt_Email.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Email.Location = new System.Drawing.Point(103, 336);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(166, 22);
-            this.txt_Email.TabIndex = 7;
             // 
             // frmNhaPhanPhoi
             // 

@@ -65,6 +65,12 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgv_ds_HDN = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_View = new System.Windows.Forms.Button();
@@ -73,15 +79,9 @@
             this.btn_Luu = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.dgv_ds_HDN = new System.Windows.Forms.DataGridView();
             this.qL_ThuocDataSet = new MedicineManager.QL_ThuocDataSet();
             this.chiTietHoaDonXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietHoaDonXuatTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.ChiTietHoaDonXuatTableAdapter();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -95,12 +95,12 @@
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_HDN)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_HDN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_ThuocDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonXuatBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -581,6 +581,62 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách";
             // 
+            // dgv_ds_HDN
+            // 
+            this.dgv_ds_HDN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ds_HDN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgv_ds_HDN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ds_HDN.Location = new System.Drawing.Point(3, 18);
+            this.dgv_ds_HDN.Name = "dgv_ds_HDN";
+            this.dgv_ds_HDN.RowTemplate.Height = 24;
+            this.dgv_ds_HDN.Size = new System.Drawing.Size(893, 188);
+            this.dgv_ds_HDN.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "MaHDN";
+            this.Column1.FillWeight = 93.27411F;
+            this.Column1.HeaderText = "Mã HĐN";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "MaThuoc";
+            this.Column2.FillWeight = 93.27411F;
+            this.Column2.HeaderText = "Mã thuốc";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "MaDVT";
+            this.Column3.FillWeight = 93.27411F;
+            this.Column3.HeaderText = "Mã ĐVT";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "SoLuong";
+            this.Column4.FillWeight = 126.9036F;
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "Gia";
+            this.Column5.FillWeight = 93.27411F;
+            this.Column5.HeaderText = "Giá";
+            this.Column5.Name = "Column5";
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -695,22 +751,6 @@
             this.btn_Them.Text = "Thêm ";
             this.btn_Them.UseVisualStyleBackColor = true;
             // 
-            // dgv_ds_HDN
-            // 
-            this.dgv_ds_HDN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ds_HDN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dgv_ds_HDN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ds_HDN.Location = new System.Drawing.Point(3, 18);
-            this.dgv_ds_HDN.Name = "dgv_ds_HDN";
-            this.dgv_ds_HDN.RowTemplate.Height = 24;
-            this.dgv_ds_HDN.Size = new System.Drawing.Size(893, 188);
-            this.dgv_ds_HDN.TabIndex = 0;
-            // 
             // qL_ThuocDataSet
             // 
             this.qL_ThuocDataSet.DataSetName = "QL_ThuocDataSet";
@@ -724,46 +764,6 @@
             // chiTietHoaDonXuatTableAdapter
             // 
             this.chiTietHoaDonXuatTableAdapter.ClearBeforeFill = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "MaHDN";
-            this.Column1.FillWeight = 93.27411F;
-            this.Column1.HeaderText = "Mã HĐN";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "MaThuoc";
-            this.Column2.FillWeight = 93.27411F;
-            this.Column2.HeaderText = "Mã thuốc";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "MaDVT";
-            this.Column3.FillWeight = 93.27411F;
-            this.Column3.HeaderText = "Mã ĐVT";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "SoLuong";
-            this.Column4.FillWeight = 126.9036F;
-            this.Column4.HeaderText = "Số lượng";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "Gia";
-            this.Column5.FillWeight = 93.27411F;
-            this.Column5.HeaderText = "Giá";
-            this.Column5.Name = "Column5";
             // 
             // frmNhapThuoc
             // 
@@ -791,12 +791,12 @@
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_HDN)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_HDN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_ThuocDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonXuatBindingSource)).EndInit();
             this.ResumeLayout(false);
