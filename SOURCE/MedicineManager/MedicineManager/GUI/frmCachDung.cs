@@ -35,5 +35,7 @@ namespace MedicineManager.GUI
             load_CD();
             dgv_ds_CD.DataSource = conn.Ds.Tables["CachDung"];
         }
+
+
     }
 }
