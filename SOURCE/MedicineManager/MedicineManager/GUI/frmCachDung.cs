@@ -15,8 +15,8 @@ namespace MedicineManager.GUI
     public partial class frmCachDung : Form
     {
         ketnoi conn = new ketnoi();
-        SqlDataAdapter da_CD = new SqlDataAdapter();
-        DataColumn[] primaryKey = new DataColumn[1];
+        //DataColumn[] primaryKey = new DataColumn[1];
+        SqlDataAdapter da_CD;
         DataSet ds_CD = new DataSet();
         public frmCachDung()
         {
@@ -26,15 +26,21 @@ namespace MedicineManager.GUI
         public void load_CD()
         {
             string strsel = "select * from CachDung";
-            da_CD = conn.getDataAdapter(strsel, "CachDung");
-            primaryKey[0] = conn.Ds.Tables["CachDung"].Columns["MaCD"];
-            conn.Ds.Tables["CachDung"].PrimaryKey = primaryKey;
+            da_CD = new SqlDataAdapter(strsel, conn.Str);
+            da_CD.Fill(ds_CD, "CachDung");
+            dgv_ds_CD.DataSource = ds_CD.Tables["CachDung"];
+            DataColumn[] key = new DataColumn[1];
+            key[0] = ds_CD.Tables["CachDung"].Columns[0];
+            ds_CD.Tables["CachDung"].PrimaryKey = key;
+            //da_CD = conn.getDataAdapter(strsel, "CachDung");
+            //primaryKey[0] = conn.Ds.Tables["CachDung"].Columns["MaCD"];
+            //conn.Ds.Tables["CachDung"].PrimaryKey = primaryKey;
         }
 
         private void frmCachDung_Load(object sender, EventArgs e)
         {
             load_CD();
-            dgv_ds_CD.DataSource = conn.Ds.Tables["CachDung"];
+            //dgv_ds_CD.DataSource = conn.Ds.Tables["CachDung"];
             btn_Luu.Enabled = false;
             btn_Sua.Enabled = false;
             btn_Xoa.Enabled = false;
@@ -145,40 +151,40 @@ namespace MedicineManager.GUI
             {
                 if (MessageBox.Show("Bạn có thật sự muốn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    string strsel = "select * from Thuoc where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
-                    if (conn.checkKey(strsel) == true)
-                    {
-                        MessageBox.Show("Dữ liệu đang được sử dụng không thể xóa");
-                        return;
-                    }
-                    else
-                    {
-                        string strDel = "delete from CachDung where MaCD = '" + txt_MaCD.Text.Trim() + "'";
-                        SqlDataReader drCD = conn.excuteReader(strDel);
-                        drCD.Read();
-                        drCD.Close();
-                        MessageBox.Show("Xóa thành công");
-                        SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
-                        //da_CD.Update(ds_CD, "CachDung");
-                        load_CD();
-                    }
-                    //DataTable dt_CD = new DataTable();
-                    //SqlDataAdapter da_CD1 = new SqlDataAdapter("select * from Thuoc where MaCD = '"+ txt_MaCD.Text +"'",conn.Con);
-                    //da_CD1.Fill(dt_CD);
-                    //if (dt_CD.Rows.Count > 0)
+                    //string strsel = "select * from Thuoc where MaCD = '" + txt_MaCD.Text.Trim() + "'";
+                    //if (conn.checkKey(strsel) == true)
                     //{
-                    //    MessageBox.Show("Dữ liệu đang được sử dụng");
+                    //    MessageBox.Show("Dữ liệu đang được sử dụng không thể xóa");
                     //    return;
                     //}
-                    
-                    //DataRow upd_del = ds_CD.Tables["CachDung"].Rows.Find(txt_MaCD.Text.Trim());
-                    //if (upd_del != null)
+                    //else
                     //{
-                    //    upd_del.Delete();
+                    //    string strDel = "delete from CachDung where MaCD = '" + txt_MaCD.Text.Trim() + "'";
+                    //    SqlDataReader drCD = conn.excuteReader(strDel);
+                    //    drCD.Read();
+                    //    drCD.Close();
+                    //    MessageBox.Show("Xóa thành công");
+                    //    SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
+                    //    //da_CD.Update(ds_CD, "CachDung");
+                    //    load_CD();
                     //}
-                    //SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
-                    //da_CD.Update(ds_CD, "CachDung");
-                    //MessageBox.Show("Xóa thành công");
+                    DataTable dt_CD = new DataTable();
+                    SqlDataAdapter da_CD1 = new SqlDataAdapter("select * from Thuoc where MaCD = '" + txt_MaCD.Text + "'", conn.Str);
+                    da_CD1.Fill(dt_CD);
+                    if (dt_CD.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Dữ liệu đang được sử dụng");
+                        return;
+                    }
+
+                    DataRow upd_del = ds_CD.Tables["CachDung"].Rows.Find(txt_MaCD.Text.Trim());
+                    if (upd_del != null)
+                    {
+                        upd_del.Delete();
+                    }
+                    SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
+                    da_CD.Update(ds_CD, "CachDung");
+                    MessageBox.Show("Xóa thành công");
                 }
             }
             catch (Exception ex )

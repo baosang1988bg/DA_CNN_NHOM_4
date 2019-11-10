@@ -14,25 +14,31 @@ namespace MedicineManager.GUI
     public partial class frmNhomThuoc : Form
     {
         ketnoi conn = new ketnoi();
-        SqlDataAdapter da_NSX = new SqlDataAdapter();
-        DataColumn[] primaryKey = new DataColumn[1];
+        //DataColumn[] primaryKey = new DataColumn[1];
+        DataSet ds_NT = new DataSet();
         public frmNhomThuoc()
         {
             InitializeComponent();
         }
 
-        public void load_NT()
+        void load_NT()
         {
             string strsel = "select * from NhomThuoc";
-            da_NSX = conn.getDataAdapter(strsel, "NhomThuoc");
-            primaryKey[0] = conn.Ds.Tables["NhomThuoc"].Columns["MaNhom"];
-            conn.Ds.Tables["NhomThuoc"].PrimaryKey = primaryKey;
+            SqlDataAdapter da_NT = new SqlDataAdapter(strsel, conn.Str);
+            da_NT.Fill(ds_NT, "NhomThuoc");
+            dgv_ds_NT.DataSource = ds_NT.Tables["NhomThuoc"];
+            DataColumn[] key = new DataColumn[1];
+            key[0] = ds_NT.Tables["NhomThuoc"].Columns[0];
+            ds_NT.Tables["NhomThuoc"].PrimaryKey = key;
+            //da_NT = conn.getDataAdapter(strsel, "NhomThuoc");
+            //primaryKey[0] = conn.Ds.Tables["NhomThuoc"].Columns["MaNhom"];
+            //conn.Ds.Tables["NhomThuoc"].PrimaryKey = primaryKey;
         }
 
         private void frmNhomThuoc_Load(object sender, EventArgs e)
         {
             load_NT();
-            dgv_ds_NT.DataSource = conn.Ds.Tables["NhomThuoc"];
+            //dgv_ds_NT.DataSource = conn.Ds.Tables["NhomThuoc"];
         }
     }
 }
