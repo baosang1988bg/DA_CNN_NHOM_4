@@ -118,7 +118,7 @@ namespace MedicineManager.GUI
             {
                 try
                 {
-                    string strUp = "update CachDung set TenCD = '"+ txt_TenCD.Text.Trim() +"'  where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
+                    string strUp = "update CachDung set TenCD = N'"+ txt_TenCD.Text.Trim() +"'  where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
                     SqlCommandBuilder builder = new SqlCommandBuilder(da_CD);
                     conn.updateToDB(strUp);
                     da_CD.Update(conn.Ds, "TenCD");
@@ -185,6 +185,10 @@ namespace MedicineManager.GUI
                     SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
                     da_CD.Update(ds_CD, "CachDung");
                     MessageBox.Show("Xóa thành công");
+                    txt_MaCD.Clear();
+                    txt_TenCD.Clear();
+                    btn_Sua.Enabled = false;
+                    btn_Xoa.Enabled = false;
                 }
             }
             catch (Exception ex )
