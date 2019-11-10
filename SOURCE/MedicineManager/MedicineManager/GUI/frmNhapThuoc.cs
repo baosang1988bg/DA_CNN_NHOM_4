@@ -161,7 +161,7 @@ namespace MedicineManager.GUI
                 string tenNV = "select MaNV from NhanVien where TenNV LIKE N'%" + cbo_TenNV.Text.Trim() + "%'";
                 SqlDataReader drTenNV = conn.excuteReader(tenNV);       
                 drTenNV.Read();
-                string maNV = drTenNV["MaNV"].ToString(); ;
+                string maNV = drTenNV["MaNV"].ToString();
 
                 drTenNV.Close();
                 conn.ClosedConnection();

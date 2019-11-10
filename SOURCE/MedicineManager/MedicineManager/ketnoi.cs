@@ -144,8 +144,8 @@ namespace MedicineManager
         }
         public bool checkKey(string sql)
         {
-            SqlDataAdapter MyData = new SqlDataAdapter(sql, Con);
             DataTable table = new DataTable();
+            SqlDataAdapter MyData = new SqlDataAdapter(sql, Con);            
             MyData.Fill(table);
             if (table.Rows.Count > 0)
                 return true;

@@ -73,15 +73,97 @@ namespace MedicineManager.GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-
+            if (txt_MaCD.Text == string.Empty)
+            {
+                MessageBox.Show("Chưa nhập mã cách dùng");
+                txt_MaCD.Focus();
+                return;
+            }
+            if (txt_TenCD.Text == string.Empty)
+            {
+                MessageBox.Show("Chưa nhập cách dùng");
+                txt_TenCD.Focus();
+                return;
+            }
+            if (txt_MaCD.Enabled == true)//Thêm
+            {
+                try
+                {
+                    string strC = "select COUNT(*) from CachDung where MaCD = '" + txt_MaCD.Text.Trim() + "'";
+                    int checkCD = conn.getCount(strC);
+                    if (checkCD > 0)
+                    {
+                        MessageBox.Show("Mã " + txt_MaCD.Text.Trim() + " này đã tồn tại");
+                        return;
+                    }
+                    string strIns = "insert into CachDung (MaCD,TenCD) values ('" + txt_MaCD.Text.Trim() + "','" + txt_TenCD.Text.Trim() + "')";
+                    conn.updateToDB(strIns);
+                    MessageBox.Show("Lưu thành công mã: "+ txt_MaCD.Text.Trim() +" và tên: "+ txt_TenCD.Text.Trim() +"");
+                    load_CD();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi trong phần tạo mới cách dùng");
+                    return;
+                }
+            }
+            else//Sửa
+            {
+                try
+                {
+                    string strUp = "update CachDung set TenCD = '"+ txt_TenCD.Text.Trim() +"'  where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
+                    conn.updateToDB(strUp);
+                    MessageBox.Show("Sửa mã " + txt_MaCD.Text.Trim() + " thành công!");
+                    load_CD();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
+            }
+            txt_MaCD.Clear();
+            txt_TenCD.Clear();
+            txt_TenCD.Enabled = false;
+            txt_MaCD.Enabled = false;
+            btn_Luu.Enabled = false;
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             btn_Luu.Enabled = true;
             txt_TenCD.Enabled = true;
+            txt_MaCD.Enabled = false;
 
+        }
 
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Bạn có thật sự muốn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    string strsel = "select * from Thuoc where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
+                    if (conn.checkKey(strsel) == true)
+                    {
+                        MessageBox.Show("Dữ liệu đang được sử dụng không thể xóa");
+                        return;
+                    }
+                    else
+                    {
+                        string strDel = "delete from CachDung where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
+                        SqlDataReader drCD = conn.excuteReader(strDel);
+                        drCD.Read();
+                        drCD.Close();
+                        MessageBox.Show("Xóa thành công");
+                        load_CD();
+                    }
+                }
+            }
+            catch (Exception ex )
+            {
+                MessageBox.Show("Xóa thất bại rồi" + ex);
+                return;
+            }
         }
 
 
