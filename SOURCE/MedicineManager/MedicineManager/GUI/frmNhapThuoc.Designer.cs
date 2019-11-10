@@ -66,6 +66,11 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_ds_HDN = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_View = new System.Windows.Forms.Button();
@@ -81,11 +86,6 @@
             this.thuocTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.ThuocTableAdapter();
             this.donViTinhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.donViTinhTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.DonViTinhTableAdapter();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -608,6 +608,46 @@
             this.dgv_ds_HDN.Size = new System.Drawing.Size(1012, 153);
             this.dgv_ds_HDN.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "MaHDN";
+            this.Column1.FillWeight = 93.27411F;
+            this.Column1.HeaderText = "Mã HĐN";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "MaThuoc";
+            this.Column2.FillWeight = 93.27411F;
+            this.Column2.HeaderText = "Mã thuốc";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "MaDVT";
+            this.Column3.FillWeight = 93.27411F;
+            this.Column3.HeaderText = "Mã ĐVT";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "SoLuong";
+            this.Column4.FillWeight = 126.9036F;
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "Gia";
+            this.Column5.FillWeight = 93.27411F;
+            this.Column5.HeaderText = "Giá";
+            this.Column5.Name = "Column5";
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -755,46 +795,6 @@
             // donViTinhTableAdapter
             // 
             this.donViTinhTableAdapter.ClearBeforeFill = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "Gia";
-            this.Column5.FillWeight = 93.27411F;
-            this.Column5.HeaderText = "Giá";
-            this.Column5.Name = "Column5";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "SoLuong";
-            this.Column4.FillWeight = 126.9036F;
-            this.Column4.HeaderText = "Số lượng";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "MaDVT";
-            this.Column3.FillWeight = 93.27411F;
-            this.Column3.HeaderText = "Mã ĐVT";
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "MaThuoc";
-            this.Column2.FillWeight = 93.27411F;
-            this.Column2.HeaderText = "Mã thuốc";
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "MaHDN";
-            this.Column1.FillWeight = 93.27411F;
-            this.Column1.HeaderText = "Mã HĐN";
-            this.Column1.Name = "Column1";
             // 
             // frmNhapThuoc
             // 

@@ -15,8 +15,9 @@ namespace MedicineManager.GUI
     public partial class frmCachDung : Form
     {
         ketnoi conn = new ketnoi();
-        SqlDataAdapter da_NSX = new SqlDataAdapter();
+        SqlDataAdapter da_CD = new SqlDataAdapter();
         DataColumn[] primaryKey = new DataColumn[1];
+        DataSet ds_CD = new DataSet();
         public frmCachDung()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace MedicineManager.GUI
         public void load_CD()
         {
             string strsel = "select * from CachDung";
-            da_NSX = conn.getDataAdapter(strsel, "CachDung");
+            da_CD = conn.getDataAdapter(strsel, "CachDung");
             primaryKey[0] = conn.Ds.Tables["CachDung"].Columns["MaCD"];
             conn.Ds.Tables["CachDung"].PrimaryKey = primaryKey;
         }
@@ -112,7 +113,9 @@ namespace MedicineManager.GUI
                 try
                 {
                     string strUp = "update CachDung set TenCD = '"+ txt_TenCD.Text.Trim() +"'  where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
+                    SqlCommandBuilder builder = new SqlCommandBuilder(da_CD);
                     conn.updateToDB(strUp);
+                    da_CD.Update(conn.Ds, "TenCD");
                     MessageBox.Show("Sửa mã " + txt_MaCD.Text.Trim() + " thành công!");
                     load_CD();
                 }
@@ -150,13 +153,32 @@ namespace MedicineManager.GUI
                     }
                     else
                     {
-                        string strDel = "delete from CachDung where MaCD = '"+ txt_MaCD.Text.Trim() +"'";
+                        string strDel = "delete from CachDung where MaCD = '" + txt_MaCD.Text.Trim() + "'";
                         SqlDataReader drCD = conn.excuteReader(strDel);
                         drCD.Read();
                         drCD.Close();
                         MessageBox.Show("Xóa thành công");
+                        SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
+                        //da_CD.Update(ds_CD, "CachDung");
                         load_CD();
                     }
+                    //DataTable dt_CD = new DataTable();
+                    //SqlDataAdapter da_CD1 = new SqlDataAdapter("select * from Thuoc where MaCD = '"+ txt_MaCD.Text +"'",conn.Con);
+                    //da_CD1.Fill(dt_CD);
+                    //if (dt_CD.Rows.Count > 0)
+                    //{
+                    //    MessageBox.Show("Dữ liệu đang được sử dụng");
+                    //    return;
+                    //}
+                    
+                    //DataRow upd_del = ds_CD.Tables["CachDung"].Rows.Find(txt_MaCD.Text.Trim());
+                    //if (upd_del != null)
+                    //{
+                    //    upd_del.Delete();
+                    //}
+                    //SqlCommandBuilder cmb = new SqlCommandBuilder(da_CD);
+                    //da_CD.Update(ds_CD, "CachDung");
+                    //MessageBox.Show("Xóa thành công");
                 }
             }
             catch (Exception ex )
