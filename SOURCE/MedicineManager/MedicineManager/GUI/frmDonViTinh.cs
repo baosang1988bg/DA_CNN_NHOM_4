@@ -32,7 +32,7 @@ namespace MedicineManager.GUI
         private void frmDonViTinh_Load(object sender, EventArgs e)
         {
             load_DVT();
-            dgv_ds_dvt.DataSource = conn.Ds.Tables["DonViTinh"];
+            dgv_ds_DVT.DataSource = conn.Ds.Tables["DonViTinh"];
         }
     }
 }

@@ -34,7 +34,56 @@ namespace MedicineManager.GUI
         {
             load_CD();
             dgv_ds_CD.DataSource = conn.Ds.Tables["CachDung"];
+            btn_Luu.Enabled = false;
+            btn_Sua.Enabled = false;
+            btn_Xoa.Enabled = false;
+            txt_MaCD.Enabled = false;
+            txt_TenCD.Enabled = false;
         }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            txt_MaCD.Text = "";
+            txt_TenCD.Text = "";
+            txt_MaCD.Focus();
+            btn_Luu.Enabled = true;
+            txt_MaCD.Enabled = true;
+            txt_TenCD.Enabled = true;
+        }
+
+        private void dgv_ds_CD_SelectionChanged(object sender, EventArgs e)
+        {
+            btn_Xoa.Enabled = btn_Sua.Enabled = true;
+        }
+
+        private void dgv_ds_CD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = e.RowIndex;
+                txt_MaCD.Text = dgv_ds_CD.Rows[index].Cells[0].Value.ToString();
+                txt_TenCD.Text = dgv_ds_CD.Rows[index].Cells[1].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sắp xếp");
+            }
+            
+        }
+
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            btn_Luu.Enabled = true;
+            txt_TenCD.Enabled = true;
+
+
+        }
+
 
 
     }
