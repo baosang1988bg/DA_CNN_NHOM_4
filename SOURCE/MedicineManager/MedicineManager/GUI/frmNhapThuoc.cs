@@ -142,6 +142,8 @@ namespace MedicineManager.GUI
             cbo_TenNPP.Text = "";
             cbo_TenNV.Text = "";
             txt_ThanhTien.Text = "0";
+            txt_MaHDN.Enabled = true;
+
         }
 
         private void btn_LPN_Click(object sender, EventArgs e)
@@ -264,15 +266,20 @@ namespace MedicineManager.GUI
                 //thêm dữ liệu thành tiền
                 int sl = int.Parse(nUD_SL.Value.ToString());
                 int gia = int.Parse(txt_DonGia.Text.Trim());
-
+                txt_MaHDN.Text = cbo_Ma_HDN.Text;
                 int thanhTien = sl * gia;
 
-                txt_ThanhTien.Text = thanhTien.ToString();
-
-                string strUpTT = "update HoaDonNhap set TienNhan = TienNhan + "+ thanhTien +" where MaHDN = '"+ maHDN +"'";
+                string strUpTT = "update HoaDonNhap set TienNhan = TienNhan + " + thanhTien + " where MaHDN = '" + maHDN + "'";
                 conn.updateToDB(strUpTT);
 
-
+                string strUp = "select TienNhan from HoaDonNhap where MaHDN = '"+ txt_MaHDN.Text.Trim() +"'";
+                SqlDataReader drTT = conn.excuteReader(strUp);
+                while (drTT.Read())
+                {
+                    txt_ThanhTien.Text = drTT["TienNhan"].ToString();
+                }
+                drTT.Close();
+                conn.ClosedConnection();
 
                 return;
             }
@@ -280,6 +287,11 @@ namespace MedicineManager.GUI
             {
                 MessageBox.Show("Lỗi ở phần thêm thông tin chi tiết");
             }
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
