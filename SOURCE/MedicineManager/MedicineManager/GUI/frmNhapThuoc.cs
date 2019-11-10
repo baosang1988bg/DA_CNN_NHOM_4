@@ -44,11 +44,11 @@ namespace MedicineManager.GUI
 
         public void Load_cbo_MaHD()
         {
-            string strsel = "select * from ChiTietHoaDonNhap";
-            DataTable dt = conn.getDataTable(strsel, "ChiTietHoaDonNhap");
+            string strsel = "select * from HoaDonNhap";
+            DataTable dt = conn.getDataTable(strsel, "HoaDonNhap");
             cbo_Ma_HDN.DataSource = dt;
             cbo_Ma_HDN.DisplayMember = "MaHDN";
-            cbo_Ma_HDN.ValueMember = "MaThuoc";
+            cbo_Ma_HDN.ValueMember = "MaNPP";
         }
 
         public void Load_cbo_TenThuoc()
@@ -84,12 +84,15 @@ namespace MedicineManager.GUI
 
         private void frmNhapThuoc_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qL_ThuocDataSet.DonViTinh' table. You can move, or remove it, as needed.
+            this.donViTinhTableAdapter.Fill(this.qL_ThuocDataSet.DonViTinh);
+            // TODO: This line of code loads data into the 'qL_ThuocDataSet.Thuoc' table. You can move, or remove it, as needed.
+            this.thuocTableAdapter.Fill(this.qL_ThuocDataSet.Thuoc);
             // TODO: This line of code loads data into the 'qL_ThuocDataSet.ChiTietHoaDonXuat' table. You can move, or remove it, as needed.
             this.chiTietHoaDonXuatTableAdapter.Fill(this.qL_ThuocDataSet.ChiTietHoaDonXuat);
             Load_cbo_TenNPP();
             Load_cbo_TenThuoc();
             Load_cbo_MaHD();
-            txt_DonGia.Text = "0";
             txt_DonGia.Enabled = false;
             load_HDN();
             txt_ThanhTien.Text = "0";
@@ -128,13 +131,7 @@ namespace MedicineManager.GUI
         private void cbo_Ma_HDN_SelectedIndexChanged(object sender, EventArgs e)
         {
             string strsel = "select * from ChiTietHoaDonNhap where MaHDN LIKE N'%" + cbo_Ma_HDN.Text.Trim() + "%'";
-            //SqlDataReader dr = conn.excuteReader(strsel);
-            //while (dr.Read())
-            //{
-            //    txt_DonGia.Text = dr["GiaBan"].ToString();
-            //}
-            //dr.Close();
-            //conn.ClosedConnection();
+
             
 
         }
@@ -160,10 +157,10 @@ namespace MedicineManager.GUI
                 string maHDN = txt_MaHDN.Text.Trim();
 
                 string tenNV = "select MaNV from NhanVien where TenNV LIKE N'%" + cbo_TenNV.Text.Trim() + "%'";
-                SqlDataReader drTenNV = conn.excuteReader(tenNV);
-                string maNV = drTenNV["MaNV"].ToString();;
+                SqlDataReader drTenNV = conn.excuteReader(tenNV);       
                 drTenNV.Read();
-                maNV = drTenNV["MaNV"].ToString();
+                string maNV = drTenNV["MaNV"].ToString(); ;
+
                 drTenNV.Close();
                 conn.ClosedConnection();
 
@@ -171,9 +168,9 @@ namespace MedicineManager.GUI
 
                 string tenNPP = "select MaNPP from NhaPhanPhoi where TenNPP LIKE N'%" + cbo_TenNPP.Text.Trim() + "%'";
                 SqlDataReader drTenNPP = conn.excuteReader(tenNPP);
-                string maNPP = drTenNPP["MaNPP"].ToString(); ;
                 drTenNPP.Read();
-                maNPP = drTenNPP["MaNPP"].ToString();
+                string maNPP = drTenNPP["MaNPP"].ToString(); ;
+
                 drTenNPP.Close();
                 conn.ClosedConnection();
 
@@ -187,7 +184,14 @@ namespace MedicineManager.GUI
                 string strIns = "insert into HoaDonNhap (MaHDN,MaNPP,MaNV,NgayLap) values ('"+ maHDN +"','"+ maNPP +"','"+ maNV +"','"+ ngaypp +"');";
                 conn.updateToDB(strIns);
                 MessageBox.Show("Mã "+ maHDN +" được tạo thành công!");
-                load_HDN();
+                cbo_Ma_HDN.DataSource = null;
+                cbo_Ma_HDN.Items.Clear();
+                cbo_Ma_HDN.ResetText();
+                Load_cbo_MaHD();
+                cbo_Ma_HDN.Text = maHDN;
+                txt_MaHDN.Enabled = false;
+                cbo_TenNPP.Enabled = false;
+                cbo_TenNV.Enabled = false;
                 return;
             }
             catch (Exception ex)
@@ -199,23 +203,83 @@ namespace MedicineManager.GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            string tenNV = "select MaNV from NhanVien where TenNV LIKE N'%" + cbo_TenNV.Text.Trim() + "%'";
-            SqlDataReader drTenNV = conn.excuteReader(tenNV);
-            drTenNV.Read();
-            string maNV = drTenNV["MaNV"].ToString();
-            //while (drTenNV.Read())
-            //{
-            //    maNV = drTenNV["MaNV"].ToString();
 
-            //}
-            drTenNV.Close();
-            conn.ClosedConnection();
-            MessageBox.Show(maNV);
         }
 
         private void cbo_TenNPP_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            if (cbo_Ma_HDN.Text == "" || txt_DonGia.Text == "" || cbo_DVT.Text == "" || cbo_MaThuoc.Text == "")
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin");
+                cbo_Ma_HDN.Text = txt_MaHDN.Text;
+                return;
+            }
+            try
+            {
+                //mã hóa đơn nhập
+                string maHDN = cbo_Ma_HDN.Text;
+
+                //lấy mã thuốc
+                string tenThuoc = "select MaThuoc from Thuoc where TenThuoc LIKE N'%" + cbo_MaThuoc.Text.Trim() + "%'";
+                SqlDataReader drTenThuoc = conn.excuteReader(tenThuoc);
+                drTenThuoc.Read();
+                string maThuoc = drTenThuoc["MaThuoc"].ToString(); ;
+
+                drTenThuoc.Close();
+                conn.ClosedConnection();
+
+                //lấy mã đơn vị tính
+                string tenDVT = "select MaDVT from DonViTinh where TenDVT LIKE N'%" + cbo_DVT.Text.Trim() + "%'";
+                SqlDataReader drTenDVT = conn.excuteReader(tenDVT);
+                drTenDVT.Read();
+                string maDVT = drTenDVT["MaDVT"].ToString(); ;
+
+                drTenDVT.Close();
+                conn.ClosedConnection();
+
+                //lấy đơn giá
+                string dongia = txt_DonGia.Text;
+
+                //lấy số lượng
+                string soluong = nUD_SL.Value.ToString();
+
+                string strSQL = "select COUNT(*) from ChiTietHoaDonNhap ct where ct.MaHDN = '"+ cbo_Ma_HDN.Text.Trim() +"' And ct.MaThuoc = '"+ cbo_MaThuoc.Text.Trim() +"'";
+                int Check_MHD = conn.getCount(strSQL);
+                if (Check_MHD > 0)
+                {
+                    MessageBox.Show("Đơn hàng "+ maHDN +" đã tồn tại thuốc "+ maThuoc +" vui lòng chọn thuốc khác hoặc chỉnh sửa.");
+                    return;
+                }
+                //thêm dữ liệu mới vào bảng
+                string strIns = "insert into ChiTietHoaDonNhap (MaHDN,MaThuoc,MaDVT,SoLuong,Gia) values ('" + maHDN + "','" + maThuoc + "','" + maDVT + "','" + soluong + "','" + dongia + "');";
+                conn.updateToDB(strIns);
+                MessageBox.Show("Mã "+ maHDN +"và thuốc "+ maThuoc +"được tạo thành công!");
+                load_HDN();
+
+                //thêm dữ liệu thành tiền
+                int sl = int.Parse(nUD_SL.Value.ToString());
+                int gia = int.Parse(txt_DonGia.Text.Trim());
+
+                int thanhTien = sl * gia;
+
+                txt_ThanhTien.Text = thanhTien.ToString();
+
+                string strUpTT = "update HoaDonNhap set TienNhan = TienNhan + "+ thanhTien +" where MaHDN = '"+ maHDN +"'";
+                conn.updateToDB(strUpTT);
+
+
+
+                return;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi ở phần thêm thông tin chi tiết");
+            }
         }
     }
 }

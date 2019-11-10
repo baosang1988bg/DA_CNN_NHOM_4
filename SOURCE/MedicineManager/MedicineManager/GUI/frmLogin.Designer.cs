@@ -61,7 +61,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.74496F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.25504F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
@@ -119,7 +119,7 @@
             this.txt_userID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_userID.Location = new System.Drawing.Point(220, 114);
             this.txt_userID.Name = "txt_userID";
-            this.txt_userID.Size = new System.Drawing.Size(368, 53);
+            this.txt_userID.Size = new System.Drawing.Size(367, 53);
             this.txt_userID.TabIndex = 3;
             // 
             // txt_Pass
@@ -127,7 +127,7 @@
             this.txt_Pass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Pass.Location = new System.Drawing.Point(220, 225);
             this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(368, 53);
+            this.txt_Pass.Size = new System.Drawing.Size(367, 53);
             this.txt_Pass.TabIndex = 4;
             // 
             // btn_login
@@ -146,7 +146,7 @@
             this.cbo_server.FormattingEnabled = true;
             this.cbo_server.Location = new System.Drawing.Point(220, 3);
             this.cbo_server.Name = "cbo_server";
-            this.cbo_server.Size = new System.Drawing.Size(368, 55);
+            this.cbo_server.Size = new System.Drawing.Size(367, 55);
             this.cbo_server.TabIndex = 6;
             // 
             // frmLogin

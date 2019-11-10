@@ -66,11 +66,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_ds_HDN = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_View = new System.Windows.Forms.Button();
@@ -82,6 +77,15 @@
             this.qL_ThuocDataSet = new MedicineManager.QL_ThuocDataSet();
             this.chiTietHoaDonXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietHoaDonXuatTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.ChiTietHoaDonXuatTableAdapter();
+            this.thuocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thuocTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.ThuocTableAdapter();
+            this.donViTinhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.donViTinhTableAdapter = new MedicineManager.QL_ThuocDataSetTableAdapters.DonViTinhTableAdapter();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -103,6 +107,8 @@
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qL_ThuocDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonXuatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thuocBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donViTinhBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -241,6 +247,7 @@
             // cbo_TenNPP
             // 
             this.cbo_TenNPP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_TenNPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TenNPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_TenNPP.FormattingEnabled = true;
             this.cbo_TenNPP.Location = new System.Drawing.Point(928, 8);
@@ -252,6 +259,7 @@
             // cbo_TenNV
             // 
             this.cbo_TenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_TenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_TenNV.FormattingEnabled = true;
             this.cbo_TenNV.Location = new System.Drawing.Point(311, 43);
@@ -424,6 +432,7 @@
             // cbo_Ma_HDN
             // 
             this.cbo_Ma_HDN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_Ma_HDN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Ma_HDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_Ma_HDN.FormattingEnabled = true;
             this.cbo_Ma_HDN.Location = new System.Drawing.Point(310, 3);
@@ -446,6 +455,7 @@
             // cbo_MaThuoc
             // 
             this.cbo_MaThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_MaThuoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_MaThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_MaThuoc.FormattingEnabled = true;
             this.cbo_MaThuoc.Location = new System.Drawing.Point(925, 3);
@@ -519,6 +529,7 @@
             // cbo_DVT
             // 
             this.cbo_DVT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_DVT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_DVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_DVT.FormattingEnabled = true;
             this.cbo_DVT.Location = new System.Drawing.Point(925, 41);
@@ -595,46 +606,6 @@
             this.dgv_ds_HDN.RowTemplate.Height = 24;
             this.dgv_ds_HDN.Size = new System.Drawing.Size(1012, 153);
             this.dgv_ds_HDN.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "MaHDN";
-            this.Column1.FillWeight = 93.27411F;
-            this.Column1.HeaderText = "Mã HĐN";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "MaThuoc";
-            this.Column2.FillWeight = 93.27411F;
-            this.Column2.HeaderText = "Mã thuốc";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "MaDVT";
-            this.Column3.FillWeight = 93.27411F;
-            this.Column3.HeaderText = "Mã ĐVT";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "SoLuong";
-            this.Column4.FillWeight = 126.9036F;
-            this.Column4.HeaderText = "Số lượng";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "Gia";
-            this.Column5.FillWeight = 93.27411F;
-            this.Column5.HeaderText = "Giá";
-            this.Column5.Name = "Column5";
             // 
             // tableLayoutPanel6
             // 
@@ -750,6 +721,7 @@
             this.btn_Them.TabIndex = 12;
             this.btn_Them.Text = "Thêm ";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // qL_ThuocDataSet
             // 
@@ -764,6 +736,64 @@
             // chiTietHoaDonXuatTableAdapter
             // 
             this.chiTietHoaDonXuatTableAdapter.ClearBeforeFill = true;
+            // 
+            // thuocBindingSource
+            // 
+            this.thuocBindingSource.DataMember = "Thuoc";
+            this.thuocBindingSource.DataSource = this.qL_ThuocDataSet;
+            // 
+            // thuocTableAdapter
+            // 
+            this.thuocTableAdapter.ClearBeforeFill = true;
+            // 
+            // donViTinhBindingSource
+            // 
+            this.donViTinhBindingSource.DataMember = "DonViTinh";
+            this.donViTinhBindingSource.DataSource = this.qL_ThuocDataSet;
+            // 
+            // donViTinhTableAdapter
+            // 
+            this.donViTinhTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "Gia";
+            this.Column5.FillWeight = 93.27411F;
+            this.Column5.HeaderText = "Giá";
+            this.Column5.Name = "Column5";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "SoLuong";
+            this.Column4.FillWeight = 126.9036F;
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "MaDVT";
+            this.Column3.FillWeight = 93.27411F;
+            this.Column3.HeaderText = "Mã ĐVT";
+            this.Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "MaThuoc";
+            this.Column2.FillWeight = 93.27411F;
+            this.Column2.HeaderText = "Mã thuốc";
+            this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "MaHDN";
+            this.Column1.FillWeight = 93.27411F;
+            this.Column1.HeaderText = "Mã HĐN";
+            this.Column1.Name = "Column1";
             // 
             // frmNhapThuoc
             // 
@@ -799,6 +829,8 @@
             this.tableLayoutPanel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.qL_ThuocDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonXuatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thuocBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donViTinhBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -852,11 +884,15 @@
         private QL_ThuocDataSet qL_ThuocDataSet;
         private System.Windows.Forms.BindingSource chiTietHoaDonXuatBindingSource;
         private QL_ThuocDataSetTableAdapters.ChiTietHoaDonXuatTableAdapter chiTietHoaDonXuatTableAdapter;
+        private System.Windows.Forms.TextBox txt_Ngay;
+        private System.Windows.Forms.BindingSource thuocBindingSource;
+        private QL_ThuocDataSetTableAdapters.ThuocTableAdapter thuocTableAdapter;
+        private System.Windows.Forms.BindingSource donViTinhBindingSource;
+        private QL_ThuocDataSetTableAdapters.DonViTinhTableAdapter donViTinhTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.TextBox txt_Ngay;
     }
 }
