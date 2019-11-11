@@ -14,8 +14,8 @@ namespace MedicineManager.GUI
     public partial class frmNhaPhanPhoi : Form
     {
         ketnoi conn = new ketnoi();
-        SqlDataAdapter da_NSX = new SqlDataAdapter();
-        DataColumn[] primaryKey = new DataColumn[1];
+        SqlDataAdapter da_NPP;
+        DataSet ds_NPP = new DataSet();
         public frmNhaPhanPhoi()
         {
             InitializeComponent();
@@ -24,15 +24,18 @@ namespace MedicineManager.GUI
         public void load_NPP()
         {
             string strsel = "select * from NhaPhanPhoi";
-            da_NSX = conn.getDataAdapter(strsel, "NhaPhanPhoi");
-            primaryKey[0] = conn.Ds.Tables["NhaPhanPhoi"].Columns["MaNPP"];
-            conn.Ds.Tables["NhaPhanPhoi"].PrimaryKey = primaryKey;
+            da_NPP = new SqlDataAdapter(strsel, conn.Str);
+            da_NPP.Fill(ds_NPP, "NhaPhanPhoi");
+            dgv_ds_npp.DataSource = ds_NPP.Tables["NhaPhanPhoi"];
+            DataColumn[] key = new DataColumn[1];
+            key[0] = ds_NPP.Tables["NhaPhanPhoi"].Columns[0];
+            ds_NPP.Tables["NhaPhanPhoi"].PrimaryKey = key;
+
         }
 
         private void frmNhaPhanPhoi_Load(object sender, EventArgs e)
         {
             load_NPP();
-            dgv_ds_npp.DataSource = conn.Ds.Tables["NhaPhanPhoi"];
         }
 
         private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)

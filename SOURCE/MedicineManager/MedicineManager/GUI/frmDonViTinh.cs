@@ -25,7 +25,7 @@ namespace MedicineManager.GUI
         public void load_DVT()
         {
             string strsel = "select * from DonViTinh";
-            da_DVT = conn.getDataAdapter(strsel, "DonViTinh");
+            da_DVT = new SqlDataAdapter(strsel, conn.Str);
             da_DVT.Fill(ds_DVT, "DonViTinh");
             dgv_ds_DVT.DataSource = ds_DVT.Tables["DonViTinh"];
             DataColumn[] key = new DataColumn[1];
@@ -61,13 +61,13 @@ namespace MedicineManager.GUI
             {
                 if (txt_MaDVT.Text == string.Empty)
                 {
-                    MessageBox.Show("Bạn chưa nhập mã nhóm thuốc");
+                    MessageBox.Show("Bạn chưa nhập mã nhóm đơn vị tính");
                     txt_MaDVT.Focus();
                     return;
                 }
                 if (txt_TenDVT.Text == string.Empty)
                 {
-                    MessageBox.Show("Bạn chưa nhập tên nhóm thuốc");
+                    MessageBox.Show("Bạn chưa nhập tên đơn vị tính");
                     txt_TenDVT.Focus();
                     return;
                 }
@@ -123,7 +123,7 @@ namespace MedicineManager.GUI
                 {
                     DataTable dt_DVT = new DataTable();
 
-                    string strsel = "select * from DonViTinh where MaDVT = '" + txt_MaDVT.Text + "'";
+                    string strsel = "select * from Thuoc where MaDVT = '" + txt_MaDVT.Text + "'";
                     SqlDataAdapter da_Thuoc = new SqlDataAdapter(strsel, conn.Str);
                     da_Thuoc.Fill(dt_DVT);
                     if (dt_DVT.Rows.Count > 0)
@@ -137,7 +137,7 @@ namespace MedicineManager.GUI
                         upNew.Delete();
                     }
                     SqlCommandBuilder cmb = new SqlCommandBuilder(da_DVT);
-                    da_DVT.Update(ds_DVT, "NhomThuoc");
+                    da_DVT.Update(ds_DVT, "DonViTinh");
                     btn_Xoa_DVT.Enabled = btn_Sua_DVT.Enabled = false;
                     txt_MaDVT.Clear();
                     txt_TenDVT.Clear();

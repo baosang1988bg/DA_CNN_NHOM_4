@@ -17,7 +17,7 @@ namespace MedicineManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNhomThuoc());
+            Application.Run(new frmNhaSanXuat());
         }
     }
 }
