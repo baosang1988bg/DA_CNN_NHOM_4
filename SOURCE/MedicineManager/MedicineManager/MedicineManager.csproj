@@ -93,12 +93,6 @@
     <Compile Include="GUI\frmNhomThuoc.Designer.cs">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\HoaDonNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\HoaDonNhap.Designer.cs">
-      <DependentUpon>HoaDonNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,9 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhomThuoc.resx">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\HoaDonNhap.resx">
-      <DependentUpon>HoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>

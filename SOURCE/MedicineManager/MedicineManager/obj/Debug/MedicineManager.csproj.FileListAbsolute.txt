@@ -60,7 +60,6 @@ D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\Medicin
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmNhaSanXuat.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmNhapThuoc.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmNhomThuoc.resources
-D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.HoaDonNhap.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.Manager.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.MenuMaster.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.Test.resources
