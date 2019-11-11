@@ -51,13 +51,13 @@
             this.txt_MaNT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Xoa_NT = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Sua_NT = new System.Windows.Forms.Button();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Luu = new System.Windows.Forms.Button();
+            this.btn_Luu_NT = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Them = new System.Windows.Forms.Button();
+            this.btn_Them_NT = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -381,7 +381,7 @@
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel16.Controls.Add(this.btn_Xoa, 1, 1);
+            this.tableLayoutPanel16.Controls.Add(this.btn_Xoa_NT, 1, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(251, 70);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
@@ -392,16 +392,16 @@
             this.tableLayoutPanel16.Size = new System.Drawing.Size(242, 62);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
-            // btn_Xoa
+            // btn_Xoa_NT
             // 
-            this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Xoa.Location = new System.Drawing.Point(39, 9);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(163, 43);
-            this.btn_Xoa.TabIndex = 0;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            this.btn_Xoa_NT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Xoa_NT.Location = new System.Drawing.Point(39, 9);
+            this.btn_Xoa_NT.Name = "btn_Xoa_NT";
+            this.btn_Xoa_NT.Size = new System.Drawing.Size(163, 43);
+            this.btn_Xoa_NT.TabIndex = 0;
+            this.btn_Xoa_NT.Text = "Xóa";
+            this.btn_Xoa_NT.UseVisualStyleBackColor = true;
+            this.btn_Xoa_NT.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // tableLayoutPanel11
             // 
@@ -409,7 +409,7 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel11.Controls.Add(this.btn_Sua, 1, 1);
+            this.tableLayoutPanel11.Controls.Add(this.btn_Sua_NT, 1, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 70);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -420,16 +420,16 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(242, 62);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
-            // btn_Sua
+            // btn_Sua_NT
             // 
-            this.btn_Sua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Sua.Location = new System.Drawing.Point(39, 9);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(163, 43);
-            this.btn_Sua.TabIndex = 1;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            this.btn_Sua_NT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Sua_NT.Location = new System.Drawing.Point(39, 9);
+            this.btn_Sua_NT.Name = "btn_Sua_NT";
+            this.btn_Sua_NT.Size = new System.Drawing.Size(163, 43);
+            this.btn_Sua_NT.TabIndex = 1;
+            this.btn_Sua_NT.Text = "Sửa";
+            this.btn_Sua_NT.UseVisualStyleBackColor = true;
+            this.btn_Sua_NT.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // tableLayoutPanel10
             // 
@@ -437,7 +437,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel10.Controls.Add(this.btn_Luu, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.btn_Luu_NT, 1, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(251, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -448,16 +448,16 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(242, 61);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
-            // btn_Luu
+            // btn_Luu_NT
             // 
-            this.btn_Luu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Luu.Location = new System.Drawing.Point(39, 9);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(163, 42);
-            this.btn_Luu.TabIndex = 2;
-            this.btn_Luu.Text = "Lưu";
-            this.btn_Luu.UseVisualStyleBackColor = true;
-            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
+            this.btn_Luu_NT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Luu_NT.Location = new System.Drawing.Point(39, 9);
+            this.btn_Luu_NT.Name = "btn_Luu_NT";
+            this.btn_Luu_NT.Size = new System.Drawing.Size(163, 42);
+            this.btn_Luu_NT.TabIndex = 2;
+            this.btn_Luu_NT.Text = "Lưu";
+            this.btn_Luu_NT.UseVisualStyleBackColor = true;
+            this.btn_Luu_NT.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -465,7 +465,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel9.Controls.Add(this.btn_Them, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.btn_Them_NT, 1, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -476,16 +476,16 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(242, 61);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
-            // btn_Them
+            // btn_Them_NT
             // 
-            this.btn_Them.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Them.Location = new System.Drawing.Point(39, 9);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(163, 42);
-            this.btn_Them.TabIndex = 3;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            this.btn_Them_NT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Them_NT.Location = new System.Drawing.Point(39, 9);
+            this.btn_Them_NT.Name = "btn_Them_NT";
+            this.btn_Them_NT.Size = new System.Drawing.Size(163, 42);
+            this.btn_Them_NT.TabIndex = 3;
+            this.btn_Them_NT.Text = "Thêm";
+            this.btn_Them_NT.UseVisualStyleBackColor = true;
+            this.btn_Them_NT.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // frmNhomThuoc
             // 
@@ -541,10 +541,10 @@
         private System.Windows.Forms.TextBox txt_TenNT;
         private System.Windows.Forms.TextBox txt_MaNT;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Luu;
-        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Button btn_Xoa_NT;
+        private System.Windows.Forms.Button btn_Sua_NT;
+        private System.Windows.Forms.Button btn_Luu_NT;
+        private System.Windows.Forms.Button btn_Them_NT;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;

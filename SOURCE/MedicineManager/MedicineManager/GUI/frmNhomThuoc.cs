@@ -38,10 +38,11 @@ namespace MedicineManager.GUI
             load_NT();
             txt_MaNT.Enabled = txt_TenNT.Enabled = false;
 
-            btn_Xoa.Enabled = btn_Luu.Enabled = btn_Sua.Enabled = false;
+            btn_Xoa_NT.Enabled = btn_Luu_NT.Enabled = btn_Sua_NT.Enabled = false;
 
             dgv_ds_NT.AllowUserToAddRows = false;
             dgv_ds_NT.ReadOnly = true;
+            dgv_ds_NT.MultiSelect = false;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -49,13 +50,13 @@ namespace MedicineManager.GUI
             txt_MaNT.Clear();
             txt_TenNT.Clear();
             txt_MaNT.Enabled = txt_TenNT.Enabled = true;
-            btn_Luu.Enabled = true;
+            btn_Luu_NT.Enabled = true;
             txt_MaNT.Focus();
         }
 
         private void dgv_ds_NT_SelectionChanged(object sender, EventArgs e)
         {
-            btn_Sua.Enabled = btn_Xoa.Enabled = true;
+            btn_Sua_NT.Enabled = btn_Xoa_NT.Enabled = true;
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace MedicineManager.GUI
                 }
                 if (txt_MaNT.Enabled == true)
                 {
-                    string strSearch = "select COUNT(*) from NhomThuoc where MaNhom = '"+ txt_MaNT.Text +"'";
+                    string strSearch = "select COUNT(*) from Thuoc where MaNhom = '"+ txt_MaNT.Text +"'";
                     int checkNT = conn.getCount(strSearch);
                     if (checkNT > 0)
                     {
@@ -108,7 +109,7 @@ namespace MedicineManager.GUI
                 txt_MaNT.Clear();
                 txt_TenNT.Clear();
                 MessageBox.Show("Lưu thành công");
-                btn_Luu.Enabled = false;
+                btn_Luu_NT.Enabled = false;
                 txt_MaNT.Enabled = txt_TenNT.Enabled = false;
             }
             catch (Exception ex)
@@ -122,7 +123,7 @@ namespace MedicineManager.GUI
             txt_TenNT.Enabled = true;
             txt_MaNT.Enabled = false;
 
-            btn_Luu.Enabled = true;
+            btn_Luu_NT.Enabled = true;
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
@@ -148,7 +149,7 @@ namespace MedicineManager.GUI
                     }
                     SqlCommandBuilder cmb = new SqlCommandBuilder(da_NT);
                     da_NT.Update(ds_NT, "NhomThuoc");
-                    btn_Xoa.Enabled = btn_Sua.Enabled = false;
+                    btn_Xoa_NT.Enabled = btn_Sua_NT.Enabled = false;
                     txt_MaNT.Clear();
                     txt_TenNT.Clear();
                     MessageBox.Show("Xóa mã " + txt_MaNT.Text + "thành công");
@@ -167,8 +168,8 @@ namespace MedicineManager.GUI
                 int index = e.RowIndex;
                 txt_MaNT.Text = dgv_ds_NT.Rows[index].Cells[0].Value.ToString();
                 txt_TenNT.Text = dgv_ds_NT.Rows[index].Cells[1].Value.ToString();
-                btn_Sua.Enabled = btn_Xoa.Enabled = true;
-                btn_Luu.Enabled = false;
+                btn_Sua_NT.Enabled = btn_Xoa_NT.Enabled = true;
+                btn_Luu_NT.Enabled = false;
             }
             catch (Exception)
             {
