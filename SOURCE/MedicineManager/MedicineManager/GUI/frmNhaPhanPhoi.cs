@@ -106,16 +106,25 @@ namespace MedicineManager.GUI
                 }
                 if (txt_MaNPP.Enabled == true)
                 {
-                    DataRow inNew = ds_NPP.Tables["NhaPhanPhoi"].NewRow();
+                    string strSearch = "select COUNT(*) from NhaPhanPhoi where MaNPP = '"+txt_MaNPP.Text+"'";
+                    int checkNPP = conn.getCount(strSearch);
+                    if (checkNPP > 0)
+                    {
+                        MessageBox.Show("Mã "+txt_MaNPP.Text+" đã tồn tại");
+                        return;
+                    }
+                    else
+                    {
+                        DataRow inNew = ds_NPP.Tables["NhaPhanPhoi"].NewRow();
 
-                    inNew["MaNPP"] = txt_MaNPP.Text;
-                    inNew["TenNPP"] = txt_TenNPP.Text;
-                    inNew["DiaChi"] = txt_DiaChi_NPP.Text;
-                    inNew["DienThoai"] = txt_SDT_NPP.Text;
-                    inNew["Email"] = txt_Email_NPP.Text;
+                        inNew["MaNPP"] = txt_MaNPP.Text;
+                        inNew["TenNPP"] = txt_TenNPP.Text;
+                        inNew["DiaChi"] = txt_DiaChi_NPP.Text;
+                        inNew["DienThoai"] = txt_SDT_NPP.Text;
+                        inNew["Email"] = txt_Email_NPP.Text;
 
-                    ds_NPP.Tables["NhaPhanPhoi"].Rows.Add(inNew);
-
+                        ds_NPP.Tables["NhaPhanPhoi"].Rows.Add(inNew);
+                    }
                 }
                 else
                 {

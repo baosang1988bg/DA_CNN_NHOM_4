@@ -77,7 +77,7 @@ namespace MedicineManager.GUI
                 }
                 if (txt_MaNT.Enabled == true)
                 {
-                    string strSearch = "select COUNT(*) from Thuoc where MaNhom = '"+ txt_MaNT.Text +"'";
+                    string strSearch = "select COUNT(*) from NhomThuoc where MaNhom = '"+ txt_MaNT.Text +"'";
                     int checkNT = conn.getCount(strSearch);
                     if (checkNT > 0)
                     {
