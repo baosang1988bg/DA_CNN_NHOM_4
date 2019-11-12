@@ -44,6 +44,11 @@
             this.txt_SDT_NPP = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_ds_npp = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Them_NPP = new System.Windows.Forms.Button();
             this.btn_Luu_NPP = new System.Windows.Forms.Button();
@@ -51,11 +56,6 @@
             this.btn_Xoa_NPP = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -261,6 +261,42 @@
             this.dgv_ds_npp.Name = "dgv_ds_npp";
             this.dgv_ds_npp.Size = new System.Drawing.Size(1092, 620);
             this.dgv_ds_npp.TabIndex = 0;
+            this.dgv_ds_npp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_npp_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "MaNPP";
+            this.Column1.HeaderText = "Mã nhà phân phối";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "TenNPP";
+            this.Column2.HeaderText = "Tên nhà phân phối";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "DiaChi";
+            this.Column3.HeaderText = "Địa chỉ";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "DienThoai";
+            this.Column4.HeaderText = "Điện thoại";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "Email";
+            this.Column5.HeaderText = "Email";
+            this.Column5.Name = "Column5";
             // 
             // tableLayoutPanel4
             // 
@@ -307,6 +343,7 @@
             this.btn_Luu_NPP.TabIndex = 1;
             this.btn_Luu_NPP.Text = "Lưu";
             this.btn_Luu_NPP.UseVisualStyleBackColor = true;
+            this.btn_Luu_NPP.Click += new System.EventHandler(this.btn_Luu_NPP_Click);
             // 
             // btn_Sua_NPP
             // 
@@ -317,6 +354,7 @@
             this.btn_Sua_NPP.TabIndex = 2;
             this.btn_Sua_NPP.Text = "Sửa";
             this.btn_Sua_NPP.UseVisualStyleBackColor = true;
+            this.btn_Sua_NPP.Click += new System.EventHandler(this.btn_Sua_NPP_Click);
             // 
             // btn_Xoa_NPP
             // 
@@ -327,13 +365,14 @@
             this.btn_Xoa_NPP.TabIndex = 3;
             this.btn_Xoa_NPP.Text = "Xóa";
             this.btn_Xoa_NPP.UseVisualStyleBackColor = true;
+            this.btn_Xoa_NPP.Click += new System.EventHandler(this.btn_Xoa_NPP_Click);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.6936F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.3064F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 293F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -355,41 +394,6 @@
             this.label5.Size = new System.Drawing.Size(228, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhà phân phối";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "MaNPP";
-            this.Column1.HeaderText = "Mã nhà phân phối";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "TenNPP";
-            this.Column2.HeaderText = "Tên nhà phân phối";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "DiaChi";
-            this.Column3.HeaderText = "Địa chỉ";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "DienThoai";
-            this.Column4.HeaderText = "Điện thoại";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "Email";
-            this.Column5.HeaderText = "Email";
-            this.Column5.Name = "Column5";
             // 
             // frmNhaPhanPhoi
             // 

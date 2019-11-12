@@ -152,7 +152,7 @@ namespace MedicineManager.GUI
                     btn_Xoa_NT.Enabled = btn_Sua_NT.Enabled = false;
                     txt_MaNT.Clear();
                     txt_TenNT.Clear();
-                    MessageBox.Show("Xóa mã " + txt_MaNT.Text + "thành công");
+                    MessageBox.Show("Xóa thành công");
                 }
             }
             catch (Exception ex)
