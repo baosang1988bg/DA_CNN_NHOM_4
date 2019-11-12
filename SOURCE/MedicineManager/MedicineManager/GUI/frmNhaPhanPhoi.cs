@@ -36,14 +36,32 @@ namespace MedicineManager.GUI
         private void frmNhaPhanPhoi_Load(object sender, EventArgs e)
         {
             load_NPP();
+            dgv_ds_npp.AllowUserToAddRows = false;
+            dgv_ds_npp.ReadOnly = true;
+
+            btn_Luu_NPP.Enabled = btn_Sua_NPP.Enabled = btn_Xoa_NPP.Enabled = false;
+
+            txt_MaNPP.Enabled = txt_TenNPP.Enabled = txt_DiaChi_NPP.Enabled = txt_Email_NPP.Enabled = txt_SDT_NPP.Enabled = false;
         }
 
         private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
+                MessageBox.Show("" + txt_SDT_NPP.TextLength);
                 e.Handled = true;
             }
+            if (txt_SDT_NPP.TextLength >= 10)
+            {
+                e.Handled = true;
+                MessageBox.Show("Vui lòng kiểm tra lại số điện thoại");
+            }
+        }
+
+        private void btn_Them_NPP_Click(object sender, EventArgs e)
+        {
+            txt_MaNPP.Enabled = txt_TenNPP.Enabled = txt_DiaChi_NPP.Enabled = txt_Email_NPP.Enabled = txt_SDT_NPP.Enabled = btn_Luu_NPP.Enabled = true;
+            txt_MaNPP.Focus();
         }
     }
 }
