@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1237, 560);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(976, 721);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -90,11 +90,11 @@
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 87);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 111);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1231, 470);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(970, 607);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox1
@@ -103,7 +103,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 464);
+            this.groupBox1.Size = new System.Drawing.Size(285, 601);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
@@ -134,7 +134,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(357, 443);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(279, 580);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label1
@@ -142,9 +142,9 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 31);
+            this.label1.Location = new System.Drawing.Point(3, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 94);
+            this.label1.Size = new System.Drawing.Size(91, 124);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã NSX";
             // 
@@ -153,9 +153,9 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 125);
+            this.label2.Location = new System.Drawing.Point(3, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 94);
+            this.label2.Size = new System.Drawing.Size(91, 124);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên NSX";
             // 
@@ -164,9 +164,9 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 219);
+            this.label3.Location = new System.Drawing.Point(3, 289);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 94);
+            this.label3.Size = new System.Drawing.Size(91, 124);
             this.label3.TabIndex = 2;
             this.label3.Text = "Địa chỉ";
             // 
@@ -175,51 +175,52 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 313);
+            this.label4.Location = new System.Drawing.Point(3, 413);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 94);
+            this.label4.Size = new System.Drawing.Size(91, 124);
             this.label4.TabIndex = 3;
             this.label4.Text = "Số điện thoại";
             // 
             // txt_MaNSX
             // 
             this.txt_MaNSX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_MaNSX.Location = new System.Drawing.Point(127, 34);
+            this.txt_MaNSX.Location = new System.Drawing.Point(100, 44);
             this.txt_MaNSX.Name = "txt_MaNSX";
-            this.txt_MaNSX.Size = new System.Drawing.Size(208, 22);
+            this.txt_MaNSX.Size = new System.Drawing.Size(161, 22);
             this.txt_MaNSX.TabIndex = 4;
             // 
             // txt_TenNSX
             // 
             this.txt_TenNSX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TenNSX.Location = new System.Drawing.Point(127, 128);
+            this.txt_TenNSX.Location = new System.Drawing.Point(100, 168);
             this.txt_TenNSX.Name = "txt_TenNSX";
-            this.txt_TenNSX.Size = new System.Drawing.Size(208, 22);
+            this.txt_TenNSX.Size = new System.Drawing.Size(161, 22);
             this.txt_TenNSX.TabIndex = 5;
             // 
             // txt_DiaChi_NSX
             // 
             this.txt_DiaChi_NSX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_DiaChi_NSX.Location = new System.Drawing.Point(127, 222);
+            this.txt_DiaChi_NSX.Location = new System.Drawing.Point(100, 292);
             this.txt_DiaChi_NSX.Name = "txt_DiaChi_NSX";
-            this.txt_DiaChi_NSX.Size = new System.Drawing.Size(208, 22);
+            this.txt_DiaChi_NSX.Size = new System.Drawing.Size(161, 22);
             this.txt_DiaChi_NSX.TabIndex = 6;
             // 
             // txt_SDT_NSX
             // 
             this.txt_SDT_NSX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_SDT_NSX.Location = new System.Drawing.Point(127, 316);
+            this.txt_SDT_NSX.Location = new System.Drawing.Point(100, 416);
             this.txt_SDT_NSX.Name = "txt_SDT_NSX";
-            this.txt_SDT_NSX.Size = new System.Drawing.Size(208, 22);
+            this.txt_SDT_NSX.Size = new System.Drawing.Size(161, 22);
             this.txt_SDT_NSX.TabIndex = 7;
+            this.txt_SDT_NSX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_NSX_KeyPress);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgv_ds_nsx);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(372, 3);
+            this.groupBox2.Location = new System.Drawing.Point(294, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(732, 464);
+            this.groupBox2.Size = new System.Drawing.Size(576, 601);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -236,8 +237,9 @@
             this.dgv_ds_nsx.Location = new System.Drawing.Point(3, 18);
             this.dgv_ds_nsx.Name = "dgv_ds_nsx";
             this.dgv_ds_nsx.RowTemplate.Height = 24;
-            this.dgv_ds_nsx.Size = new System.Drawing.Size(726, 443);
+            this.dgv_ds_nsx.Size = new System.Drawing.Size(570, 580);
             this.dgv_ds_nsx.TabIndex = 0;
+            this.dgv_ds_nsx.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_nsx_CellClick);
             // 
             // Column1
             // 
@@ -276,7 +278,7 @@
             this.tableLayoutPanel4.Controls.Add(this.btn_Sua_NSX, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.btn_Luu_NSX, 0, 7);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1110, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(876, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 10;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -289,59 +291,63 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(118, 464);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(91, 601);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // btn_Them_NSX
             // 
             this.btn_Them_NSX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Them_NSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them_NSX.Location = new System.Drawing.Point(3, 49);
+            this.btn_Them_NSX.Location = new System.Drawing.Point(3, 63);
             this.btn_Them_NSX.Name = "btn_Them_NSX";
-            this.btn_Them_NSX.Size = new System.Drawing.Size(112, 40);
+            this.btn_Them_NSX.Size = new System.Drawing.Size(85, 54);
             this.btn_Them_NSX.TabIndex = 0;
             this.btn_Them_NSX.Text = "Thêm";
             this.btn_Them_NSX.UseVisualStyleBackColor = true;
+            this.btn_Them_NSX.Click += new System.EventHandler(this.btn_Them_NSX_Click);
             // 
             // btn_Xoa_NSX
             // 
             this.btn_Xoa_NSX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Xoa_NSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa_NSX.Location = new System.Drawing.Point(3, 141);
+            this.btn_Xoa_NSX.Location = new System.Drawing.Point(3, 183);
             this.btn_Xoa_NSX.Name = "btn_Xoa_NSX";
-            this.btn_Xoa_NSX.Size = new System.Drawing.Size(112, 40);
+            this.btn_Xoa_NSX.Size = new System.Drawing.Size(85, 54);
             this.btn_Xoa_NSX.TabIndex = 1;
             this.btn_Xoa_NSX.Text = "Xóa";
             this.btn_Xoa_NSX.UseVisualStyleBackColor = true;
+            this.btn_Xoa_NSX.Click += new System.EventHandler(this.btn_Xoa_NSX_Click);
             // 
             // btn_Sua_NSX
             // 
             this.btn_Sua_NSX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Sua_NSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua_NSX.Location = new System.Drawing.Point(3, 233);
+            this.btn_Sua_NSX.Location = new System.Drawing.Point(3, 303);
             this.btn_Sua_NSX.Name = "btn_Sua_NSX";
-            this.btn_Sua_NSX.Size = new System.Drawing.Size(112, 40);
+            this.btn_Sua_NSX.Size = new System.Drawing.Size(85, 54);
             this.btn_Sua_NSX.TabIndex = 2;
             this.btn_Sua_NSX.Text = "Sửa";
             this.btn_Sua_NSX.UseVisualStyleBackColor = true;
+            this.btn_Sua_NSX.Click += new System.EventHandler(this.btn_Sua_NSX_Click);
             // 
             // btn_Luu_NSX
             // 
             this.btn_Luu_NSX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Luu_NSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu_NSX.Location = new System.Drawing.Point(3, 325);
+            this.btn_Luu_NSX.Location = new System.Drawing.Point(3, 423);
             this.btn_Luu_NSX.Name = "btn_Luu_NSX";
-            this.btn_Luu_NSX.Size = new System.Drawing.Size(112, 40);
+            this.btn_Luu_NSX.Size = new System.Drawing.Size(85, 54);
             this.btn_Luu_NSX.TabIndex = 3;
             this.btn_Luu_NSX.Text = "Lưu";
             this.btn_Luu_NSX.UseVisualStyleBackColor = true;
+            this.btn_Luu_NSX.Click += new System.EventHandler(this.btn_Luu_NSX_Click);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.6936F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.3064F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 293F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -350,7 +356,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.3913F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.6087F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1231, 78);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(970, 102);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label5
@@ -358,7 +364,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(497, 12);
+            this.label5.Location = new System.Drawing.Point(359, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(210, 38);
             this.label5.TabIndex = 0;
@@ -368,7 +374,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 560);
+            this.ClientSize = new System.Drawing.Size(976, 721);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmNhaSanXuat";
             this.Text = "frmNhaCungCap";

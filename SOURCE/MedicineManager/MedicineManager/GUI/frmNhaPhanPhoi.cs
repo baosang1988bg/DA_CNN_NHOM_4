@@ -38,6 +38,7 @@ namespace MedicineManager.GUI
             load_NPP();
             dgv_ds_npp.AllowUserToAddRows = false;
             dgv_ds_npp.ReadOnly = true;
+            dgv_ds_npp.MultiSelect = false;
 
             btn_Luu_NPP.Enabled = btn_Sua_NPP.Enabled = btn_Xoa_NPP.Enabled = false;
 
@@ -152,7 +153,6 @@ namespace MedicineManager.GUI
                 btn_Sua_NPP.Enabled = btn_Xoa_NPP.Enabled = btn_Luu_NPP.Enabled = false;
                 txt_MaNPP.Enabled = txt_TenNPP.Enabled = txt_DiaChi_NPP.Enabled = txt_Email_NPP.Enabled = txt_SDT_NPP.Enabled = false;
                 MessageBox.Show("Lưu thành công");
-
             }
             catch (Exception ex)
             {
@@ -201,7 +201,7 @@ namespace MedicineManager.GUI
                     da_HDN.Fill(dt_HDN);
                     if (dt_HDN.Rows.Count > 0)
                     {
-                        MessageBox.Show("");
+                        MessageBox.Show("Dữ liệu đang được sử dụng");
                         return;
                     }
                     DataRow delNew = ds_NPP.Tables["NhaPhanPhoi"].Rows.Find(txt_MaNPP.Text);
@@ -217,6 +217,7 @@ namespace MedicineManager.GUI
                     txt_Email_NPP.Clear();
                     txt_SDT_NPP.Clear();
                     btn_Sua_NPP.Enabled = btn_Xoa_NPP.Enabled = btn_Luu_NPP.Enabled = false;
+                    txt_MaNPP.Enabled = txt_TenNPP.Enabled = txt_DiaChi_NPP.Enabled = txt_Email_NPP.Enabled = txt_SDT_NPP.Enabled = false;
                     MessageBox.Show("Xóa thành công!");
                 }
             }

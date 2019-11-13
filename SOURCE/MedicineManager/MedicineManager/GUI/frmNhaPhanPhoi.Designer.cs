@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1705, 768);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(954, 735);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -93,11 +93,11 @@
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 118);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 113);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1699, 647);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(948, 619);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox1
@@ -106,7 +106,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(418, 641);
+            this.groupBox1.Size = new System.Drawing.Size(231, 613);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
@@ -138,7 +138,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(412, 620);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(225, 592);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label1
@@ -146,9 +146,9 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 31);
+            this.label1.Location = new System.Drawing.Point(3, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 111);
+            this.label1.Size = new System.Drawing.Size(72, 106);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã NPP";
             // 
@@ -157,9 +157,9 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 142);
+            this.label2.Location = new System.Drawing.Point(3, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 111);
+            this.label2.Size = new System.Drawing.Size(72, 106);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên NPP";
             // 
@@ -168,9 +168,9 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 253);
+            this.label3.Location = new System.Drawing.Point(3, 241);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 111);
+            this.label3.Size = new System.Drawing.Size(72, 106);
             this.label3.TabIndex = 2;
             this.label3.Text = "Địa chỉ";
             // 
@@ -179,60 +179,60 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 475);
+            this.label4.Location = new System.Drawing.Point(3, 453);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 111);
+            this.label4.Size = new System.Drawing.Size(72, 106);
             this.label4.TabIndex = 3;
             this.label4.Text = "Email";
             // 
             // txt_MaNPP
             // 
             this.txt_MaNPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_MaNPP.Location = new System.Drawing.Point(147, 34);
+            this.txt_MaNPP.Location = new System.Drawing.Point(81, 32);
             this.txt_MaNPP.Name = "txt_MaNPP";
-            this.txt_MaNPP.Size = new System.Drawing.Size(241, 22);
+            this.txt_MaNPP.Size = new System.Drawing.Size(129, 22);
             this.txt_MaNPP.TabIndex = 4;
             // 
             // txt_TenNPP
             // 
             this.txt_TenNPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TenNPP.Location = new System.Drawing.Point(147, 145);
+            this.txt_TenNPP.Location = new System.Drawing.Point(81, 138);
             this.txt_TenNPP.Name = "txt_TenNPP";
-            this.txt_TenNPP.Size = new System.Drawing.Size(241, 22);
+            this.txt_TenNPP.Size = new System.Drawing.Size(129, 22);
             this.txt_TenNPP.TabIndex = 5;
             // 
             // txt_DiaChi_NPP
             // 
             this.txt_DiaChi_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_DiaChi_NPP.Location = new System.Drawing.Point(147, 256);
+            this.txt_DiaChi_NPP.Location = new System.Drawing.Point(81, 244);
             this.txt_DiaChi_NPP.Name = "txt_DiaChi_NPP";
-            this.txt_DiaChi_NPP.Size = new System.Drawing.Size(241, 22);
+            this.txt_DiaChi_NPP.Size = new System.Drawing.Size(129, 22);
             this.txt_DiaChi_NPP.TabIndex = 6;
             // 
             // txt_Email_NPP
             // 
             this.txt_Email_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Email_NPP.Location = new System.Drawing.Point(147, 478);
+            this.txt_Email_NPP.Location = new System.Drawing.Point(81, 456);
             this.txt_Email_NPP.Name = "txt_Email_NPP";
-            this.txt_Email_NPP.Size = new System.Drawing.Size(241, 22);
+            this.txt_Email_NPP.Size = new System.Drawing.Size(129, 22);
             this.txt_Email_NPP.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 364);
+            this.label6.Location = new System.Drawing.Point(3, 347);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 25);
+            this.label6.Size = new System.Drawing.Size(57, 50);
             this.label6.TabIndex = 8;
             this.label6.Text = "Điện thoại";
             // 
             // txt_SDT_NPP
             // 
             this.txt_SDT_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_SDT_NPP.Location = new System.Drawing.Point(147, 367);
+            this.txt_SDT_NPP.Location = new System.Drawing.Point(81, 350);
             this.txt_SDT_NPP.Name = "txt_SDT_NPP";
-            this.txt_SDT_NPP.Size = new System.Drawing.Size(241, 22);
+            this.txt_SDT_NPP.Size = new System.Drawing.Size(129, 22);
             this.txt_SDT_NPP.TabIndex = 9;
             this.txt_SDT_NPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
@@ -240,9 +240,9 @@
             // 
             this.groupBox2.Controls.Add(this.dgv_ds_npp);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(427, 3);
+            this.groupBox2.Location = new System.Drawing.Point(240, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1098, 641);
+            this.groupBox2.Size = new System.Drawing.Size(610, 613);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -259,7 +259,7 @@
             this.dgv_ds_npp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ds_npp.Location = new System.Drawing.Point(3, 18);
             this.dgv_ds_npp.Name = "dgv_ds_npp";
-            this.dgv_ds_npp.Size = new System.Drawing.Size(1092, 620);
+            this.dgv_ds_npp.Size = new System.Drawing.Size(604, 592);
             this.dgv_ds_npp.TabIndex = 0;
             this.dgv_ds_npp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_npp_CellClick);
             // 
@@ -307,7 +307,7 @@
             this.tableLayoutPanel4.Controls.Add(this.btn_Sua_NPP, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.btn_Xoa_NPP, 0, 7);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1531, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(856, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 10;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -320,15 +320,15 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(165, 641);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(89, 613);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // btn_Them_NPP
             // 
             this.btn_Them_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Them_NPP.Location = new System.Drawing.Point(3, 67);
+            this.btn_Them_NPP.Location = new System.Drawing.Point(3, 64);
             this.btn_Them_NPP.Name = "btn_Them_NPP";
-            this.btn_Them_NPP.Size = new System.Drawing.Size(159, 58);
+            this.btn_Them_NPP.Size = new System.Drawing.Size(83, 55);
             this.btn_Them_NPP.TabIndex = 0;
             this.btn_Them_NPP.Text = "Thêm";
             this.btn_Them_NPP.UseVisualStyleBackColor = true;
@@ -337,9 +337,9 @@
             // btn_Luu_NPP
             // 
             this.btn_Luu_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Luu_NPP.Location = new System.Drawing.Point(3, 195);
+            this.btn_Luu_NPP.Location = new System.Drawing.Point(3, 186);
             this.btn_Luu_NPP.Name = "btn_Luu_NPP";
-            this.btn_Luu_NPP.Size = new System.Drawing.Size(159, 58);
+            this.btn_Luu_NPP.Size = new System.Drawing.Size(83, 55);
             this.btn_Luu_NPP.TabIndex = 1;
             this.btn_Luu_NPP.Text = "Lưu";
             this.btn_Luu_NPP.UseVisualStyleBackColor = true;
@@ -348,9 +348,9 @@
             // btn_Sua_NPP
             // 
             this.btn_Sua_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Sua_NPP.Location = new System.Drawing.Point(3, 323);
+            this.btn_Sua_NPP.Location = new System.Drawing.Point(3, 308);
             this.btn_Sua_NPP.Name = "btn_Sua_NPP";
-            this.btn_Sua_NPP.Size = new System.Drawing.Size(159, 58);
+            this.btn_Sua_NPP.Size = new System.Drawing.Size(83, 55);
             this.btn_Sua_NPP.TabIndex = 2;
             this.btn_Sua_NPP.Text = "Sửa";
             this.btn_Sua_NPP.UseVisualStyleBackColor = true;
@@ -359,9 +359,9 @@
             // btn_Xoa_NPP
             // 
             this.btn_Xoa_NPP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Xoa_NPP.Location = new System.Drawing.Point(3, 451);
+            this.btn_Xoa_NPP.Location = new System.Drawing.Point(3, 430);
             this.btn_Xoa_NPP.Name = "btn_Xoa_NPP";
-            this.btn_Xoa_NPP.Size = new System.Drawing.Size(159, 58);
+            this.btn_Xoa_NPP.Size = new System.Drawing.Size(83, 55);
             this.btn_Xoa_NPP.TabIndex = 3;
             this.btn_Xoa_NPP.Text = "Xóa";
             this.btn_Xoa_NPP.UseVisualStyleBackColor = true;
@@ -372,7 +372,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.6936F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.3064F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -381,7 +381,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.3913F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.6087F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1699, 109);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(948, 104);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label5
@@ -389,7 +389,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(743, 17);
+            this.label5.Location = new System.Drawing.Point(347, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(228, 38);
             this.label5.TabIndex = 0;
@@ -399,7 +399,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1705, 768);
+            this.ClientSize = new System.Drawing.Size(954, 735);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmNhaPhanPhoi";
             this.Text = "frmNhaCungCap";
