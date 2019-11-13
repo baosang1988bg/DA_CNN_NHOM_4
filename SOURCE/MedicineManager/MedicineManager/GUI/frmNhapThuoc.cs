@@ -18,6 +18,11 @@ namespace MedicineManager.GUI
         SqlDataAdapter da_NT = new SqlDataAdapter();
         DataSet ds_HDN = new DataSet();
         DataColumn[] primaryKey = new DataColumn[2];
+        SqlDataAdapter da_NPP_NT;
+        SqlDataAdapter da_DVT_NT;
+        SqlDataAdapter da_MaHD_NT;
+        SqlDataAdapter da_TT_NT;
+        SqlDataAdapter da_TenNV_NT;
 
         public frmNhapThuoc()
         {
@@ -26,45 +31,55 @@ namespace MedicineManager.GUI
 
         public void Load_cbo_TenNPP()
         {
+            DataSet ds = new DataSet();
             string strsel = "select * from NhaPhanPhoi";
-            DataTable dt = conn.getDataTable(strsel, "NhaPhanPhoi");
-            cbo_TenNPP.DataSource = dt;
+            da_NPP_NT = new SqlDataAdapter(strsel, conn.Str);
+            da_NPP_NT.Fill(ds, "NhaPhanPhoi");
+            cbo_TenNPP.DataSource = ds.Tables[0];
             cbo_TenNPP.DisplayMember = "TenNPP";
             cbo_TenNPP.ValueMember = "MaNPP";
         }
 
         public void Load_cbo_DVT()
         {
+            DataSet ds = new DataSet();
             string strsel = "select * from DonViTinh";
-            DataTable dt = conn.getDataTable(strsel, "DonViTinh");
-            cbo_DVT.DataSource = dt;
+            da_DVT_NT = new SqlDataAdapter(strsel, conn.Str);
+            da_DVT_NT.Fill(ds, "DonViTinh");
+            cbo_DVT.DataSource = ds.Tables[0];
             cbo_DVT.DisplayMember = "TenDVT";
             cbo_DVT.ValueMember = "MaDVT";
         }
 
         public void Load_cbo_MaHD()
         {
+            DataSet ds = new DataSet();
             string strsel = "select * from HoaDonNhap";
-            DataTable dt = conn.getDataTable(strsel, "HoaDonNhap");
-            cbo_Ma_HDN.DataSource = dt;
+            da_MaHD_NT = new SqlDataAdapter(strsel, conn.Str);
+            da_MaHD_NT.Fill(ds, "HoaDonNhap");
+            cbo_Ma_HDN.DataSource = ds.Tables[0];
             cbo_Ma_HDN.DisplayMember = "MaHDN";
             cbo_Ma_HDN.ValueMember = "MaNPP";
         }
 
         public void Load_cbo_TenThuoc()
         {
+            DataSet ds = new DataSet();
             string strsel = "select * from Thuoc";
-            DataTable dt = conn.getDataTable(strsel, "Thuoc");
-            cbo_MaThuoc.DataSource = dt;
+            da_TT_NT = new SqlDataAdapter(strsel, conn.Str);
+            da_TT_NT.Fill(ds, "Thuoc");
+            cbo_MaThuoc.DataSource = ds.Tables[0];
             cbo_MaThuoc.DisplayMember = "TenThuoc";
             cbo_MaThuoc.ValueMember = "MaThuoc";
         }
 
         public void Load_cbo_TenNV()
         {
+            DataSet ds = new DataSet();
             string strsel = "select * from NhanVien";
-            DataTable dt = conn.getDataTable(strsel, "NhanVien");
-            cbo_TenNV.DataSource = dt;
+            da_TenNV_NT = new SqlDataAdapter(strsel, conn.Str);
+            da_TenNV_NT.Fill(ds, "NhanVien");
+            cbo_TenNV.DataSource = ds.Tables[0];
             cbo_TenNV.DisplayMember = "TenNV";
             cbo_TenNV.ValueMember = "MaNV";
         }
@@ -84,29 +99,31 @@ namespace MedicineManager.GUI
 
         private void frmNhapThuoc_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qL_ThuocDataSet.DonViTinh' table. You can move, or remove it, as needed.
-            this.donViTinhTableAdapter.Fill(this.qL_ThuocDataSet.DonViTinh);
-            // TODO: This line of code loads data into the 'qL_ThuocDataSet.Thuoc' table. You can move, or remove it, as needed.
-            this.thuocTableAdapter.Fill(this.qL_ThuocDataSet.Thuoc);
-            // TODO: This line of code loads data into the 'qL_ThuocDataSet.ChiTietHoaDonXuat' table. You can move, or remove it, as needed.
-            this.chiTietHoaDonXuatTableAdapter.Fill(this.qL_ThuocDataSet.ChiTietHoaDonXuat);
             Load_cbo_TenNPP();
             Load_cbo_TenThuoc();
             Load_cbo_MaHD();
             txt_DonGia.Enabled = false;
-            load_HDN();
             txt_ThanhTien.Text = "0";
             txt_ThanhTien.Enabled = false;
             Load_cbo_DVT();
             Load_cbo_TenNV();
-            cbo_DVT.Text = "";
-            cbo_Ma_HDN.Text = "";
-            cbo_MaThuoc.Text = "";
-            cbo_TenNPP.Text = "";
-            cbo_TenNV.Text = "";
+
+            cbo_TenNPP.SelectedIndex = -1;
+            cbo_TenNV.SelectedIndex = -1;
+            cbo_Ma_HDN.SelectedIndex = -1;
+            cbo_MaThuoc.SelectedIndex = -1;
+            cbo_DVT.SelectedIndex = -1;
+            txt_DonGia.Text = "0";
+            txt_MaHDN.Enabled = false;
+            txt_MaHDN.Focus();
+            btn_Luu_PN.Enabled = false;
             DateTime now = DateTime.Now;
             txt_Ngay.Text = now.ToString("dd/MM/yyyy");
             txt_Ngay.Enabled = false;
+            dgv_ds_HDN.AllowUserToAddRows = false;
+            dgv_ds_HDN.ReadOnly = true;
+
+            gb_CTPN.Enabled = false;
         }
 
 
@@ -130,76 +147,90 @@ namespace MedicineManager.GUI
 
         private void cbo_Ma_HDN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string strsel = "select * from ChiTietHoaDonNhap where MaHDN LIKE N'%" + cbo_Ma_HDN.Text.Trim() + "%'";
-
-            
 
         }
 
         private void btn_TaoPN_Click(object sender, EventArgs e)
         {
             txt_MaHDN.Clear();
-            cbo_TenNPP.Text = "";
-            cbo_TenNV.Text = "";
+
+            cbo_TenNPP.SelectedIndex = -1;
+            cbo_TenNV.SelectedIndex = -1;
+
             txt_ThanhTien.Text = "0";
             txt_MaHDN.Enabled = true;
+
+            btn_Luu_PN.Enabled = true;
 
         }
 
         private void btn_LPN_Click(object sender, EventArgs e)
         {
-            if (txt_MaHDN.Text == "" || cbo_TenNPP.Text == "" || cbo_TenNV.Text == "" || txt_Ngay.Text == "")
-            {
-                MessageBox.Show("Chưa nhập đủ thông tin");
-                txt_MaHDN.Focus();
-                return;
-            }
             try
             {
-                string maHDN = txt_MaHDN.Text.Trim();
-
-                string tenNV = "select MaNV from NhanVien where TenNV LIKE N'%" + cbo_TenNV.Text.Trim() + "%'";
-                SqlDataReader drTenNV = conn.excuteReader(tenNV);       
-                drTenNV.Read();
-                string maNV = drTenNV["MaNV"].ToString();
-
-                drTenNV.Close();
-                conn.ClosedConnection();
-
-                string ngaypp = txt_Ngay.Text;
-
-                string tenNPP = "select MaNPP from NhaPhanPhoi where TenNPP LIKE N'%" + cbo_TenNPP.Text.Trim() + "%'";
-                SqlDataReader drTenNPP = conn.excuteReader(tenNPP);
-                drTenNPP.Read();
-                string maNPP = drTenNPP["MaNPP"].ToString(); ;
-
-                drTenNPP.Close();
-                conn.ClosedConnection();
-
-                string strSQL = "select COUNT(*) from HoaDonNhap where MaHDN = '"+ maHDN +"'";
-                int Check_MHD = conn.getCount(strSQL);
-                if (Check_MHD > 0)
+                if (txt_MaHDN.Text == string.Empty)
                 {
-                    MessageBox.Show("Mã "+ maHDN +" đã tồn tại");
+                    MessageBox.Show("Chưa nhập mã hóa đơn mới nè");
+                    txt_MaHDN.Focus();
                     return;
                 }
-                string strIns = "insert into HoaDonNhap (MaHDN,MaNPP,MaNV,NgayLap) values ('"+ maHDN +"','"+ maNPP +"','"+ maNV +"','"+ ngaypp +"');";
-                conn.updateToDB(strIns);
-                MessageBox.Show("Mã "+ maHDN +" được tạo thành công!");
-                cbo_Ma_HDN.DataSource = null;
-                cbo_Ma_HDN.Items.Clear();
-                cbo_Ma_HDN.ResetText();
-                Load_cbo_MaHD();
-                cbo_Ma_HDN.Text = maHDN;
-                txt_MaHDN.Enabled = false;
-                cbo_TenNPP.Enabled = false;
-                cbo_TenNV.Enabled = false;
-                return;
+                if (cbo_TenNPP.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Chưa chọn nhà phân phối nè!");
+                    cbo_TenNPP.SelectedIndex = 1;
+                    return;
+                }
+                if (cbo_TenNV.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Chưa chọn tên nhân viên nè!");
+                    cbo_TenNV.SelectedIndex = 1;
+                    return;
+                }
+                if (txt_MaHDN.Enabled == true)
+                {
+                    string strSearch = "select COUNT(*) from HoaDonNhap where MaHDN = '"+ txt_MaHDN.Text +"'";
+                    int checkMHD = conn.getCount(strSearch);
+                    if (checkMHD > 0)
+                    {
+                        MessageBox.Show("Mã "+ txt_MaHDN.Text +" đã được sử dụng");
+                        return;
+                    }
+                    else
+                    {
+                        DataRow inNew = ds_HDN.Tables["HoaDonNhap"].NewRow();
+
+                        inNew["MaHDN"] = txt_MaHDN.Text;
+                        try
+                        {
+                            //DataSet dsTenNPP = new DataSet();
+                            //string strTenNPP = "select MaNPP from NhaPhanPhoi where TenNPP LIKE N'" + cbo_TenNPP.Text + "'";
+                            //SqlDataAdapter daTenNPP = new SqlDataAdapter(strTenNPP, conn.Str);
+                            //inNew["MaNPP"] = daTenNPP;
+                            //string haha = cbo_TenNPP.ValueMember.ToString();
+                            //MessageBox.Show("aaaaa" + haha);
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Lỗi khi lưu nhà phân phối");
+                        }
+                        try
+                        {
+                            inNew["MaNV"] = cbo_TenNV.Text;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Lỗi khi lưu tên nhân viên");
+                        }
+                        inNew["NgayLap"] = txt_Ngay.Text;
+
+                        ds_HDN.Tables["HoaDonNhap"].Rows.Add(inNew);
+                    }
+                }
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Loi roi ne" + ex);
-                return;
+                MessageBox.Show("Lưu lỗi rồi!");
             }
         }
 

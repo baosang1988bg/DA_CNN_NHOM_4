@@ -142,10 +142,10 @@ namespace MedicineManager
             return ada;
 
         }
-        public bool checkKey(string sql)
+        public bool checkKey(string sql, DataTable table, SqlDataAdapter MyData)
         {
-            DataTable table = new DataTable();
-            SqlDataAdapter MyData = new SqlDataAdapter(sql, Con);            
+            table = new DataTable();
+            MyData = new SqlDataAdapter(sql, Con);            
             MyData.Fill(table);
             if (table.Rows.Count > 0)
                 return true;
