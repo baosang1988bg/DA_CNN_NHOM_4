@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\frmBanThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBanThuoc.Designer.cs">
+      <DependentUpon>frmBanThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmCachDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="GUI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmNhaPhanPhoi.cs">
       <SubType>Form</SubType>
@@ -93,6 +105,12 @@
     <Compile Include="GUI\frmNhomThuoc.Designer.cs">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThuoc.Designer.cs">
+      <DependentUpon>frmThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +123,6 @@
     <Compile Include="GUI\MenuMaster.Designer.cs">
       <DependentUpon>MenuMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="ketnoi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +131,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_ThuocDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\frmBanThuoc.resx">
+      <DependentUpon>frmBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmCachDung.resx">
       <DependentUpon>frmCachDung.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhaPhanPhoi.resx">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>
@@ -140,14 +158,14 @@
     <EmbeddedResource Include="GUI\frmNhomThuoc.resx">
       <DependentUpon>frmNhomThuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThuoc.resx">
+      <DependentUpon>frmThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MenuMaster.resx">
       <DependentUpon>MenuMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -181,6 +199,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

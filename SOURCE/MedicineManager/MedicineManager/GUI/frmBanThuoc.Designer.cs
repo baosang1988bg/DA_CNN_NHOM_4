@@ -1,6 +1,6 @@
 ﻿namespace MedicineManager.GUI
 {
-    partial class frmNhapThuoc
+    partial class frmBanThuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -254,7 +254,6 @@
             this.cbo_TenNPP.Name = "cbo_TenNPP";
             this.cbo_TenNPP.Size = new System.Drawing.Size(185, 30);
             this.cbo_TenNPP.TabIndex = 11;
-            this.cbo_TenNPP.SelectedIndexChanged += new System.EventHandler(this.cbo_TenNPP_SelectedIndexChanged);
             // 
             // cbo_TenNV
             // 
@@ -293,7 +292,6 @@
             this.btn_Tao_PN.TabIndex = 5;
             this.btn_Tao_PN.Text = "Tạo phiếu nhập";
             this.btn_Tao_PN.UseVisualStyleBackColor = true;
-            this.btn_Tao_PN.Click += new System.EventHandler(this.btn_TaoPN_Click);
             // 
             // tableLayoutPanel8
             // 
@@ -321,7 +319,6 @@
             this.btn_Luu_PN.TabIndex = 6;
             this.btn_Luu_PN.Text = "Lưu phiếu nhập";
             this.btn_Luu_PN.UseVisualStyleBackColor = true;
-            this.btn_Luu_PN.Click += new System.EventHandler(this.btn_LPN_Click);
             // 
             // txt_Ngay
             // 
@@ -417,7 +414,6 @@
             this.btn_Xoa.TabIndex = 1;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // label8
             // 
@@ -440,7 +436,6 @@
             this.cbo_Ma_HDN.Name = "cbo_Ma_HDN";
             this.cbo_Ma_HDN.Size = new System.Drawing.Size(184, 30);
             this.cbo_Ma_HDN.TabIndex = 6;
-            this.cbo_Ma_HDN.SelectedIndexChanged += new System.EventHandler(this.cbo_Ma_HDN_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -463,7 +458,6 @@
             this.cbo_MaThuoc.Name = "cbo_MaThuoc";
             this.cbo_MaThuoc.Size = new System.Drawing.Size(184, 30);
             this.cbo_MaThuoc.TabIndex = 7;
-            this.cbo_MaThuoc.SelectedIndexChanged += new System.EventHandler(this.cbo_MaThuoc_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -503,7 +497,6 @@
             0,
             0,
             0});
-            this.nUD_SL.ValueChanged += new System.EventHandler(this.nUD_SL_ValueChanged);
             // 
             // label9
             // 
@@ -733,7 +726,6 @@
             this.btn_Luu.TabIndex = 13;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
-            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // tableLayoutPanel12
             // 
@@ -762,7 +754,6 @@
             this.btn_Them.TabIndex = 12;
             this.btn_Them.Text = "Thêm ";
             this.btn_Them.UseVisualStyleBackColor = true;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // qL_ThuocDataSet
             // 
@@ -796,17 +787,16 @@
             // 
             this.donViTinhTableAdapter.ClearBeforeFill = true;
             // 
-            // frmNhapThuoc
+            // frmBanThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 678);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmNhapThuoc";
+            this.Name = "frmBanThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hóa đơn nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmNhapThuoc_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

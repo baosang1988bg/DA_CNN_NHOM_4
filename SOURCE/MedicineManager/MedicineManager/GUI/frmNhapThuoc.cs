@@ -186,6 +186,8 @@ namespace MedicineManager.GUI
                     cbo_TenNV.SelectedIndex = 1;
                     return;
                 }
+                string temp = cbo_TenNPP.SelectedValue.ToString();
+                MessageBox.Show("aaaa" + temp);
                 if (txt_MaHDN.Enabled == true)
                 {
                     string strSearch = "select COUNT(*) from HoaDonNhap where MaHDN = '"+ txt_MaHDN.Text +"'";
@@ -215,7 +217,7 @@ namespace MedicineManager.GUI
                         }
                         try
                         {
-                            inNew["MaNV"] = cbo_TenNV.Text;
+                            
                         }
                         catch (Exception)
                         {

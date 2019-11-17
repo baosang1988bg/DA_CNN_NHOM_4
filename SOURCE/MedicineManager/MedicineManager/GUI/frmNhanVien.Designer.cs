@@ -1,6 +1,6 @@
 ﻿namespace MedicineManager.GUI
 {
-    partial class frmNhaPhanPhoi
+    partial class frmNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -234,7 +234,6 @@
             this.txt_SDT_NPP.Name = "txt_SDT_NPP";
             this.txt_SDT_NPP.Size = new System.Drawing.Size(129, 22);
             this.txt_SDT_NPP.TabIndex = 9;
-            this.txt_SDT_NPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // groupBox2
             // 
@@ -261,7 +260,6 @@
             this.dgv_ds_npp.Name = "dgv_ds_npp";
             this.dgv_ds_npp.Size = new System.Drawing.Size(604, 592);
             this.dgv_ds_npp.TabIndex = 0;
-            this.dgv_ds_npp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_npp_CellClick);
             // 
             // Column1
             // 
@@ -332,7 +330,6 @@
             this.btn_Them_NPP.TabIndex = 0;
             this.btn_Them_NPP.Text = "Thêm";
             this.btn_Them_NPP.UseVisualStyleBackColor = true;
-            this.btn_Them_NPP.Click += new System.EventHandler(this.btn_Them_NPP_Click);
             // 
             // btn_Luu_NPP
             // 
@@ -343,7 +340,6 @@
             this.btn_Luu_NPP.TabIndex = 1;
             this.btn_Luu_NPP.Text = "Lưu";
             this.btn_Luu_NPP.UseVisualStyleBackColor = true;
-            this.btn_Luu_NPP.Click += new System.EventHandler(this.btn_Luu_NPP_Click);
             // 
             // btn_Sua_NPP
             // 
@@ -354,7 +350,6 @@
             this.btn_Sua_NPP.TabIndex = 2;
             this.btn_Sua_NPP.Text = "Sửa";
             this.btn_Sua_NPP.UseVisualStyleBackColor = true;
-            this.btn_Sua_NPP.Click += new System.EventHandler(this.btn_Sua_NPP_Click);
             // 
             // btn_Xoa_NPP
             // 
@@ -365,14 +360,13 @@
             this.btn_Xoa_NPP.TabIndex = 3;
             this.btn_Xoa_NPP.Text = "Xóa";
             this.btn_Xoa_NPP.UseVisualStyleBackColor = true;
-            this.btn_Xoa_NPP.Click += new System.EventHandler(this.btn_Xoa_NPP_Click);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.6936F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.3064F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -389,21 +383,20 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(346, 16);
+            this.label5.Location = new System.Drawing.Point(345, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(228, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhà phân phối";
             // 
-            // frmNhaPhanPhoi
+            // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 735);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmNhaPhanPhoi";
+            this.Name = "frmNhanVien";
             this.Text = "frmNhaCungCap";
-            this.Load += new System.EventHandler(this.frmNhaPhanPhoi_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -448,5 +441,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+
     }
 }

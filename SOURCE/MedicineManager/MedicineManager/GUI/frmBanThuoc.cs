@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MedicineManager.GUI
 {
-    public partial class Test : Form
+    public partial class frmBanThuoc : Form
     {
-        public Test()
+        public frmBanThuoc()
         {
             InitializeComponent();
         }
