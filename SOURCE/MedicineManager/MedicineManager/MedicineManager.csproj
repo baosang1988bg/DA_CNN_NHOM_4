@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\ConnectionDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ConnectionDB.Designer.cs">
+      <DependentUpon>ConnectionDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmBanThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,12 +80,6 @@
     </Compile>
     <Compile Include="GUI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmNhanVien.Designer.cs">
-      <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmNhaPhanPhoi.cs">
       <SubType>Form</SubType>
@@ -131,6 +131,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_ThuocDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\ConnectionDB.resx">
+      <DependentUpon>ConnectionDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBanThuoc.resx">
       <DependentUpon>frmBanThuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmNhanVien.resx">
-      <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhaPhanPhoi.resx">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>

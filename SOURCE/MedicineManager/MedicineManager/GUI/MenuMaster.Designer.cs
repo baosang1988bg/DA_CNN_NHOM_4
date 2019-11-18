@@ -497,7 +497,7 @@
             this.tS_TaoDonThuoc});
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(137, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(168, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -508,6 +508,7 @@
             this.tS_TaoDonThuoc.Name = "tS_TaoDonThuoc";
             this.tS_TaoDonThuoc.Size = new System.Drawing.Size(125, 24);
             this.tS_TaoDonThuoc.Text = "Tạo đơn thuốc";
+            this.tS_TaoDonThuoc.Click += new System.EventHandler(this.tS_TaoDonThuoc_Click);
             // 
             // toolStrip2
             // 
@@ -515,7 +516,7 @@
             this.tS_NhatKy});
             this.toolStrip2.Location = new System.Drawing.Point(0, 56);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(137, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(168, 27);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 

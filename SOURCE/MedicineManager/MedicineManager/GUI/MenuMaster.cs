@@ -35,7 +35,7 @@ namespace MedicineManager.GUI
         {
             ActiveForm_Master();
 
-            Test frmNH = new Test();
+            frmLogin frmNH = new frmLogin();
             frmNH.MdiParent = this;
 
             frmNH.Show();
@@ -45,13 +45,13 @@ namespace MedicineManager.GUI
 
         private void ts_Thuoc_Click(object sender, EventArgs e)
         {
-            //ActiveForm_Master();
-            //Medicine frmNH = new Medicine();
-            //frmNH.MdiParent = this;
+            ActiveForm_Master();
+            frmThuoc frmNH = new frmThuoc();
+            frmNH.MdiParent = this;
 
-            //frmNH.Show();
-            //frmNH.Top = 0;
-            //frmNH.Left = 0;
+            frmNH.Show();
+            frmNH.Top = 0;
+            frmNH.Left = 0;
             
         }
 
@@ -81,7 +81,13 @@ namespace MedicineManager.GUI
 
         private void tS_HDX_Click(object sender, EventArgs e)
         {
+            ActiveForm_Master();
+            frmBanThuoc frmNH = new frmBanThuoc();
+            frmNH.MdiParent = this;
 
+            frmNH.Show();
+            frmNH.Top = 0;
+            frmNH.Left = 0;
         }
 
         private void MenuMaster_Load(object sender, EventArgs e)
@@ -128,6 +134,17 @@ namespace MedicineManager.GUI
         {
             ActiveForm_Master();
             frmNhaPhanPhoi frmNH = new frmNhaPhanPhoi();
+            frmNH.MdiParent = this;
+
+            frmNH.Show();
+            frmNH.Top = 0;
+            frmNH.Left = 0;
+        }
+
+        private void tS_TaoDonThuoc_Click(object sender, EventArgs e)
+        {
+            ActiveForm_Master();
+            frmBanThuoc frmNH = new frmBanThuoc();
             frmNH.MdiParent = this;
 
             frmNH.Show();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MedicineManager.GUI
 {
-    public partial class frmNhanVien : Form
+    public partial class ConnectionDB : Form
     {
-        public frmNhanVien()
+        public ConnectionDB()
         {
             InitializeComponent();
         }
