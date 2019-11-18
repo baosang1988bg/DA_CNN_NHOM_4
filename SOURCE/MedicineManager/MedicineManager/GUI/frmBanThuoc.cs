@@ -23,6 +23,8 @@ namespace MedicineManager.GUI
         SqlDataAdapter da_TenNV_HD;
         SqlDataAdapter da_DVT_HD;
         SqlDataAdapter da_TenThuoc_HD;
+        SqlDataAdapter da_HDX;
+        DataSet ds_HDX = new DataSet();
 
 
         public frmBanThuoc()
@@ -65,7 +67,7 @@ namespace MedicineManager.GUI
 
         public void Load_CTHD()
         {
-            string strsel = "select * from ChiTietHoaDonXuat where = '"+ txt_HD.Text.Trim() +"'";
+            string strsel = "select * from ChiTietHoaDonXuat where = '"+ txt_MaHD.Text.Trim() +"'";
             da_HD = new SqlDataAdapter(strsel, conn.Str);
             da_HD.Fill(ds_HD, "ChiTietHoaDonXuat");
             dgv_BanThuoc.DataSource = ds_HD.Tables["ChiTietHoaDonXuat"];
@@ -80,14 +82,55 @@ namespace MedicineManager.GUI
             Load_cbo_DVT();
             Load_cbo_TenNV();
             Load_cbo_TenThuoc();
+            txt_MaHD.Enabled = txt_HD.Enabled = false;
+            txt_DonGia_HD.Enabled = false;
+            txt_NgayHD.Enabled = false;
+            txt_ThanhTien_HD.Enabled = false;
+            txt_ThanhTien_HD.Text = "0";
 
-            txt_HD.ReadOnly = true;
-            txt_DonGia_HD.ReadOnly = true;
-            txt_NgayHD.ReadOnly = true;
-            txt_ThanhTien_HD.ReadOnly = true;
+            cbo_TenNV_HD.SelectedIndex = -1;
 
             DateTime now = DateTime.Now;
             txt_NgayHD.Text = now.ToString("dd/MM/yyyy");
+        }
+
+        private void btn_Tao_HD_Click(object sender, EventArgs e)
+        {
+            txt_MaHD.Enabled = cbo_TenNV_HD.Enabled = true;
+        }
+
+        private void btn_Luu_HD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strsel = "select * from HoaDonXuat";
+                da_HDX = new SqlDataAdapter(strsel, conn.Str);
+                da_HDX.Fill(ds_HDX, "HoaDonXuat");
+                if (txt_MaHD.Text == string.Empty)
+                {
+                    MessageBox.Show("Chưa nhập mã hóa đơn mới nè");
+                    txt_MaHD.Focus();
+                    return;
+                }
+                else
+                {
+                    DataRow dr = ds_HDX.Tables["HoaDonXuat"].NewRow();
+
+                    dr["MaHDX"] = txt_MaHD.Text;
+                    dr["MaNV"] = cbo_TenNV_HD.SelectedValue;
+                    dr["NgayLap"] = txt_NgayHD.Text;
+                    dr["TienThuoc"] = txt_ThanhTien_HD.Text;
+
+                    ds_HDX.Tables["HoaDonXuat"].Rows.Add(dr);
+                }
+                SqlCommandBuilder cmb = new SqlCommandBuilder(da_HDX);
+                da_HDX.Update(ds_HDX, "HoaDonXuat");
+                MessageBox.Show("Thành công");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Thêm");
+            }
         }
 
        
