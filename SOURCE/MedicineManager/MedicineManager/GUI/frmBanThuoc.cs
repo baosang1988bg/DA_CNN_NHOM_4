@@ -19,11 +19,14 @@ namespace MedicineManager.GUI
         ketnoi conn = new ketnoi();
         SqlDataAdapter da_HD;
         DataSet ds_HD = new DataSet();
+        SqlDataAdapter da_dgv;
+        DataSet ds_dgv = new DataSet();
         DataColumn[] primarykey = new DataColumn[1];
         SqlDataAdapter da_TenNV_HD;
         SqlDataAdapter da_DVT_HD;
         SqlDataAdapter da_TenThuoc_HD;
         SqlDataAdapter da_HDX;
+        DataTable dt_dgv;
         DataSet ds_HDX = new DataSet();
 
 
@@ -67,18 +70,36 @@ namespace MedicineManager.GUI
 
         public void Load_CTHD()
         {
-            string strsel = "select * from ChiTietHoaDonXuat where = '"+ txt_MaHD.Text.Trim() +"'";
+            string strsel = "select * from ChiTietHoaDonXuat";
             da_HD = new SqlDataAdapter(strsel, conn.Str);
             da_HD.Fill(ds_HD, "ChiTietHoaDonXuat");
-            dgv_BanThuoc.DataSource = ds_HD.Tables["ChiTietHoaDonXuat"];
-            DataColumn[] key = new DataColumn[1];
-            key[0] = ds_HD.Tables["ChiTietHoaDonXuat"].Columns[0];
+            //dgv_BanThuoc.DataSource = ds_HD.Tables["ChiTietHoaDonXuat"];
+            //DataColumn[] key = new DataColumn[2];
+            //key[0] = ds_HD.Tables["ChiTietHoaDonXuat"].Columns[0];
+            //key[1] = ds_HD.Tables["ChiTietHoaDonXuat"].Columns[1];
 
-            ds_HD.Tables["ChiTietHoaDonXuat"].PrimaryKey = key;
+            //ds_HD.Tables["ChiTietHoaDonXuat"].PrimaryKey = key;
         }
+
+        public void Load_dgv()
+        {
+            //where MaHDX = '"+ txt_MaHD.Text +"'
+            string strsel = "select * from ChiTietHoaDonXuat where MaHDX = '"+ txt_MaHD.Text +"'";
+            da_dgv = new SqlDataAdapter(strsel, conn.Str);
+            da_dgv.Fill(ds_dgv, "ChiTietHoaDonXuat");
+
+            dgv_BanThuoc.DataSource = ds_dgv.Tables["ChiTietHoaDonXuat"];
+            DataColumn[] key = new DataColumn[2];
+            key[0] = ds_dgv.Tables["ChiTietHoaDonXuat"].Columns[0];
+            key[1] = ds_dgv.Tables["ChiTietHoaDonXuat"].Columns[1];
+
+            ds_dgv.Tables["ChiTietHoaDonXuat"].PrimaryKey = key;
+        }
+
 
         private void frmBanThuoc_Load(object sender, EventArgs e)
         {
+            Load_dgv();
             Load_cbo_DVT();
             Load_cbo_TenNV();
             Load_cbo_TenThuoc();
@@ -87,16 +108,20 @@ namespace MedicineManager.GUI
             txt_NgayHD.Enabled = false;
             txt_ThanhTien_HD.Enabled = false;
             txt_ThanhTien_HD.Text = "0";
+            gb_CTHD.Enabled = false;
+            cbo_TenNV_HD.SelectedIndex = cbo_DVT_HD.SelectedIndex = cbo_MaThuoc_HD.SelectedIndex = -1;
 
-            cbo_TenNV_HD.SelectedIndex = -1;
-
+            cbo_DVT_HD.Enabled = cbo_MaThuoc_HD.Enabled = cbo_TenNV_HD.Enabled = false;
+            btn_Luu_HD.Enabled = btn_Sua_HD.Enabled = btn_View_HD.Enabled = btn_Them_HD.Enabled = btn_Xoa_HD.Enabled = false;
             DateTime now = DateTime.Now;
-            txt_NgayHD.Text = now.ToString("dd/MM/yyyy");
+            txt_NgayHD.Text = now.ToString("MM/dd/yyyy");
         }
 
         private void btn_Tao_HD_Click(object sender, EventArgs e)
         {
             txt_MaHD.Enabled = cbo_TenNV_HD.Enabled = true;
+            cbo_TenNV_HD.Enabled = true;
+            btn_Luu_HD.Enabled = true;
         }
 
         private void btn_Luu_HD_Click(object sender, EventArgs e)
@@ -126,11 +151,63 @@ namespace MedicineManager.GUI
                 SqlCommandBuilder cmb = new SqlCommandBuilder(da_HDX);
                 da_HDX.Update(ds_HDX, "HoaDonXuat");
                 MessageBox.Show("Thành công");
+                txt_HD.Text = txt_MaHD.Text;
+                groupBox1.Enabled = false;
+                cbo_MaThuoc_HD.Enabled = true;
+                btn_Sua_HD.Enabled = btn_View_HD.Enabled = btn_Them_HD.Enabled = btn_Xoa_HD.Enabled = true;
+                gb_CTHD.Enabled = true;
             }
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Thêm");
             }
+        }
+
+        private void btn_Them_HD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Load_CTHD();
+                if (cbo_MaThuoc_HD.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Chưa nhập thuốc");
+                    cbo_MaThuoc_HD.SelectedIndex = 0;
+                    return;
+                }
+                else
+                {
+                    DataRow dr = ds_dgv.Tables["ChiTietHoaDonXuat"].NewRow();
+
+                    dr["MaHDX"] = txt_MaHD.Text;
+                    dr["MaThuoc"] = cbo_MaThuoc_HD.SelectedValue;
+                    dr["SoLuong"] = nUD_SL_HD.Value.ToString();
+                    dr["MaDVT"] = cbo_DVT_HD.SelectedValue;
+                    dr["Gia"] = txt_DonGia_HD.Text;
+
+                    ds_dgv.Tables["ChiTietHoaDonXuat"].Rows.Add(dr);
+                }
+                Load_dgv();
+                SqlCommandBuilder cmb_gdv = new SqlCommandBuilder(da_dgv);
+                da_dgv.Update(ds_dgv, "ChiTietHoaDonXuat");
+                MessageBox.Show("Thêm hóa đơn thành công");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi thêm");
+            }
+        }
+
+        private void cbo_MaThuoc_HD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strsel = "select GiaBan, TenDVT from Thuoc t, DonViTinh cd where t.TenThuoc = N'" + cbo_MaThuoc_HD.Text.Trim() +"' and t.MaDVT = cd.MaDVT";
+            SqlDataReader dr = conn.excuteReader(strsel);
+            while (dr.Read())
+            {
+                txt_DonGia_HD.Text = dr["GiaBan"].ToString();
+                cbo_DVT_HD.Text = dr["TenDVT"].ToString();
+            }
+            dr.Close();
+            conn.ClosedConnection();
         }
 
        

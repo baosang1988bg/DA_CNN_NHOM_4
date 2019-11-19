@@ -61,7 +61,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.74496F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.25504F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
@@ -88,7 +88,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 111);
+            this.label1.Size = new System.Drawing.Size(209, 111);
             this.label1.TabIndex = 0;
             this.label1.Text = "Server";
             // 
@@ -99,7 +99,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 111);
+            this.label2.Size = new System.Drawing.Size(209, 111);
             this.label2.TabIndex = 1;
             this.label2.Text = "User";
             // 
@@ -110,29 +110,29 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 111);
+            this.label3.Size = new System.Drawing.Size(209, 111);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
             // txt_userID
             // 
             this.txt_userID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_userID.Location = new System.Drawing.Point(219, 114);
+            this.txt_userID.Location = new System.Drawing.Point(218, 114);
             this.txt_userID.Name = "txt_userID";
-            this.txt_userID.Size = new System.Drawing.Size(365, 53);
+            this.txt_userID.Size = new System.Drawing.Size(364, 53);
             this.txt_userID.TabIndex = 3;
             // 
             // txt_Pass
             // 
             this.txt_Pass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Pass.Location = new System.Drawing.Point(219, 225);
+            this.txt_Pass.Location = new System.Drawing.Point(218, 225);
             this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(365, 53);
+            this.txt_Pass.Size = new System.Drawing.Size(364, 53);
             this.txt_Pass.TabIndex = 4;
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(219, 336);
+            this.btn_login.Location = new System.Drawing.Point(218, 336);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(133, 55);
             this.btn_login.TabIndex = 5;
@@ -144,9 +144,9 @@
             // 
             this.cbo_server.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbo_server.FormattingEnabled = true;
-            this.cbo_server.Location = new System.Drawing.Point(219, 3);
+            this.cbo_server.Location = new System.Drawing.Point(218, 3);
             this.cbo_server.Name = "cbo_server";
-            this.cbo_server.Size = new System.Drawing.Size(365, 55);
+            this.cbo_server.Size = new System.Drawing.Size(364, 55);
             this.cbo_server.TabIndex = 6;
             // 
             // frmLogin
