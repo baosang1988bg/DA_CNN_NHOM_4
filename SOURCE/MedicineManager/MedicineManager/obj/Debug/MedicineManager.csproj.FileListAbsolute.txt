@@ -67,3 +67,4 @@ D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\Medicin
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmThuoc.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.frmBanThuoc.resources
 D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.GUI.ConnectionDB.resources
+D:\DA_CNN\DA_CNN_NHOM_4\SOURCE\MedicineManager\MedicineManager\obj\Debug\MedicineManager.Report.frmHoaDon.resources

@@ -11,6 +11,7 @@ using System.Timers;
 
 using System.Data.SqlClient;
 using System.Data;
+using MedicineManager.Report;
 
 namespace MedicineManager.GUI
 {
@@ -66,6 +67,18 @@ namespace MedicineManager.GUI
             cbo_MaThuoc_HD.DataSource = ds.Tables[0];
             cbo_MaThuoc_HD.DisplayMember = "TenThuoc";
             cbo_MaThuoc_HD.ValueMember = "MaThuoc";
+        }
+
+        public void load_hdx()
+        {
+            string strsel = "select * from HoaDonXuat";
+            da_HDX = new SqlDataAdapter(strsel, conn.Str);
+            da_HDX.Fill(ds_HDX, "HoaDonXuat");
+
+            DataColumn[] key = new DataColumn[1];
+            key[0] = ds_HDX.Tables["HoaDonXuat"].Columns[0];
+
+            ds_HDX.Tables["HoaDonXuat"].PrimaryKey = key;
         }
 
         public void Load_CTHD()
@@ -128,9 +141,7 @@ namespace MedicineManager.GUI
         {
             try
             {
-                string strsel = "select * from HoaDonXuat";
-                da_HDX = new SqlDataAdapter(strsel, conn.Str);
-                da_HDX.Fill(ds_HDX, "HoaDonXuat");
+                load_hdx();
                 if (txt_MaHD.Text == string.Empty)
                 {
                     MessageBox.Show("Chưa nhập mã hóa đơn mới nè");
@@ -139,14 +150,23 @@ namespace MedicineManager.GUI
                 }
                 else
                 {
-                    DataRow dr = ds_HDX.Tables["HoaDonXuat"].NewRow();
+                    DataRow search = ds_HDX.Tables["HoaDonXuat"].Rows.Find(txt_MaHD.Text);
+                    if (search != null)
+                    {
+                        MessageBox.Show("Mã hóa đơn đã tồn tại!");
+                        return;
+                    }
+                    else
+                    {
+                        DataRow dr = ds_HDX.Tables["HoaDonXuat"].NewRow();
 
-                    dr["MaHDX"] = txt_MaHD.Text;
-                    dr["MaNV"] = cbo_TenNV_HD.SelectedValue;
-                    dr["NgayLap"] = txt_NgayHD.Text;
-                    dr["TienThuoc"] = txt_ThanhTien_HD.Text;
+                        dr["MaHDX"] = txt_MaHD.Text;
+                        dr["MaNV"] = cbo_TenNV_HD.SelectedValue;
+                        dr["NgayLap"] = txt_NgayHD.Text;
+                        dr["TienThuoc"] = txt_ThanhTien_HD.Text;
 
-                    ds_HDX.Tables["HoaDonXuat"].Rows.Add(dr);
+                        ds_HDX.Tables["HoaDonXuat"].Rows.Add(dr);
+                    }
                 }
                 SqlCommandBuilder cmb = new SqlCommandBuilder(da_HDX);
                 da_HDX.Update(ds_HDX, "HoaDonXuat");
@@ -174,17 +194,26 @@ namespace MedicineManager.GUI
                     cbo_MaThuoc_HD.SelectedIndex = 0;
                     return;
                 }
+                
                 else
                 {
-                    DataRow dr = ds_dgv.Tables["ChiTietHoaDonXuat"].NewRow();
+                    try 
+	                {
+                        DataRow dr = ds_dgv.Tables["ChiTietHoaDonXuat"].NewRow();
 
-                    dr["MaHDX"] = txt_MaHD.Text;
-                    dr["MaThuoc"] = cbo_MaThuoc_HD.SelectedValue;
-                    dr["SoLuong"] = nUD_SL_HD.Value.ToString();
-                    dr["MaDVT"] = cbo_DVT_HD.SelectedValue;
-                    dr["Gia"] = txt_DonGia_HD.Text;
+                        dr["MaHDX"] = txt_MaHD.Text;
+                        dr["MaThuoc"] = cbo_MaThuoc_HD.SelectedValue;
+                        dr["SoLuong"] = nUD_SL_HD.Value.ToString();
+                        dr["MaDVT"] = cbo_DVT_HD.SelectedValue;
+                        dr["Gia"] = txt_DonGia_HD.Text;
 
-                    ds_dgv.Tables["ChiTietHoaDonXuat"].Rows.Add(dr);
+                        ds_dgv.Tables["ChiTietHoaDonXuat"].Rows.Add(dr);
+	                }
+	                catch (Exception)
+	                {
+                        MessageBox.Show("Mã thuốc đã tồn tại!");
+                        return;
+	                }
                 }
                 Load_dgv();
                 SqlCommandBuilder cmb_gdv = new SqlCommandBuilder(da_dgv);
@@ -210,6 +239,13 @@ namespace MedicineManager.GUI
             conn.ClosedConnection();
         }
 
-       
+        private void btn_View_HD_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==System.Windows.Forms.DialogResult.Yes)
+            {
+                frmHoaDon frm = new frmHoaDon();
+                frm.Show();
+            }
+        }
     }
 }

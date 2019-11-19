@@ -152,6 +152,11 @@ namespace MedicineManager.GUI
             frmNH.Left = 0;
         }
 
+        private void tS_NhatKy_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }
